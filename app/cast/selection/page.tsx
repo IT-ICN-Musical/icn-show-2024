@@ -45,7 +45,6 @@ export default function CastSelectionPage() {
 
   return (
     <div className="w-screen h-screen flex flex-col">
-      <Navbar transparent="transparent" />
       <div className="embla absolute inset-0" ref={emblaMainRef}>
         <div className="embla__container">
           {cast.map((c, index) => (

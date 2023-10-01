@@ -10,6 +10,8 @@ const gyahegi = localFont({
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const montserrat = Montserrat({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "ICN Show 2024",
   description: "Buy your tickets here",
