@@ -4,7 +4,7 @@ import React from 'react'
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 
-interface Props {
+type Props = {
     children: JSX.Element
 }
 
