@@ -1,13 +1,20 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
+
+const gyahegi = localFont({
+  src: "./Gyahegi.otf",
+  variable: "--font-gyahegi",
+});
 
 export const metadata: Metadata = {
   title: "ICN Show 2024",
   description: "Buy your tickets here",
 };
+
 
 export default function RootLayout({
   children,
@@ -16,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${montserrat.className} ${gyahegi.variable}`}>{children}</body>
     </html>
   );
 }

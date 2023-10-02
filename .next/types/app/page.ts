@@ -1,4 +1,4 @@
-// File: /Users/rafipangestu/Desktop/icn-show-2024/app/page.tsx
+// File: /Users/devlin/Documents/PINTU/ICN-2024/icn-show-2024/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
