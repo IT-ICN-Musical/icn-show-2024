@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/devlin/Documents/PINTU/ICN-2024/icn-show-2024/app/layout\":[\"static/media/e1c529c04de64b40-s.p.woff2\",\"static/media/742007d690d81ec6-s.p.otf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
