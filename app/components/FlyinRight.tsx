@@ -29,7 +29,7 @@ useEffect(() => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{duration: 0.5}}
+            transition={{duration: 0.3}}
         >
             {children}
         </motion.div>

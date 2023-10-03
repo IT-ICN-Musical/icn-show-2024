@@ -6,9 +6,10 @@ import { motion, useInView, useAnimation } from 'framer-motion'
 
 type Props = {
     children: JSX.Element
+    x: number
 }
 
-export const FadeUp = ({children}: Props) => {
+export const FadeUp = ({children, x}: Props) => {
 const ref = useRef(null)
 const isInView = useInView(ref, {once: true})
 
@@ -23,15 +24,15 @@ useEffect(() => {
   return (
     <div ref={ref}>
         <motion.div 
-            style={{position: 'relative', zIndex: 10}}
+            // style={{position: 'relative', zIndex: 10}}
             variants={{
-                hidden: {opacity: 0, transform: 'translateY(410px)'},
-                visible: {opacity: 1, transform: 'translateY(360px)'},
+                hidden: {opacity: 0, y: 100, x: x},
+                visible: {opacity: 1, y: 0, x: 0},
             }}
             layout
             initial="hidden"
             animate={mainControls}
-            transition={{duration: 0.5}}
+            transition={{duration: 0.15, delay: 0.3}}
         >
             {children}
         </motion.div>
