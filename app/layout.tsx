@@ -1,14 +1,14 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import localFont from "next/font/local";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
+import './globals.css'
+import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
+import localFont from 'next/font/local'
 
 const gyahegi = localFont({
   src: "./Gyahegi.otf",
   variable: "--font-gyahegi",
-});
+})
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "ICN Show 2024",

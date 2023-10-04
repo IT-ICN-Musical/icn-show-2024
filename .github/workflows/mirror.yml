@@ -1,0 +1,21 @@
+name: Mirror Repository
+run-name: Mirroring recent commit by @${{ github.actor }}
+on:
+  push:
+    branches:
+      - development
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    if: github.repository == 'IT-ICN-Musical/icn-show-2024'
+    name: Mirror Repository
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Clone to Private Repository
+        uses: pixta-dev/repository-mirroring-action@v1.1.1
+        with:
+          target_repo_url: ${{ secrets.MIRROR_TARGET_REPO_URL }}
+          ssh_private_key: ${{ secrets.MIRROR_SSH_PRIVATE_KEY }}
