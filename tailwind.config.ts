@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'header': '#E8C67A',
+        'body': '#1E1E1E',
+      },
       fontFamily: {
         gyahegi: ["var(--font-gyahegi)", "serif"],
       },
