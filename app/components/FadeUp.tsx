@@ -24,7 +24,6 @@ useEffect(() => {
   return (
     <div ref={ref}>
         <motion.div 
-            // style={{position: 'relative', zIndex: 10}}
             variants={{
                 hidden: {opacity: 0, y: 100, x: x},
                 visible: {opacity: 1, y: 0, x: 0},

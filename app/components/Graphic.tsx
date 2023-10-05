@@ -12,7 +12,6 @@ export default function Graphic() {
                     alt='Asset 1'
                     width={159.52}
                     height={173.89}
-                    // style={{bottom: 0, left: 0}}
                     />
                 </FadeUp>
             </div>
@@ -24,7 +23,6 @@ export default function Graphic() {
                         alt='Asset 2'
                         width={155.21}
                         height={58.2}
-                        // style={{position: 'absolute', bottom: "215px", right: "70px", zIndex: -1}}
                     />
                 </FadeUp>
             </div>
@@ -36,7 +34,6 @@ export default function Graphic() {
                         alt='Asset 3'
                         width={155.93}
                         height={65.39}
-                        // style={{position: 'absolute', left: "35px", bottom: "270px", zIndex: 1}}
                     />
                 </FadeUp>
             </div>
@@ -47,7 +44,6 @@ export default function Graphic() {
                     alt='Asset 4'
                     width={360}
                     height={360}
-                    // style={{zIndex: 0}}
                 />
             </div>
     </div>

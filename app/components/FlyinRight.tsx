@@ -23,6 +23,7 @@ useEffect(() => {
   return (
     <div ref={ref}>
         <motion.div
+        style={{position: 'relative', zIndex: 0}}
             variants={{
                 hidden: {opacity: 0, x: 200},
                 visible: {opacity: 1, x: 0,},
