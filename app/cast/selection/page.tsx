@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { cast } from "../cast";
 import "./embla.css";
-import EmblaThumb from "@/app/components/EmblaThumb";
+import EmblaThumb from "@/app/(components)/EmblaThumb";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "@/app/components/Navbar";
 

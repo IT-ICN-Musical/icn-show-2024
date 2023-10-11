@@ -15,6 +15,7 @@ export default function Loading(props: loadingInterval) {
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
+    document.body.style.overflow = "hidden";
     const interval = setInterval(() => {
       if (progress < 100) {
         setProgress(progress + 2);
@@ -24,6 +25,7 @@ export default function Loading(props: loadingInterval) {
       } else {
         clearInterval(interval);
         setVisible(false);
+        document.body.style.overflow = "auto";
       }
     }, props.interval / 50);
 
@@ -40,14 +42,18 @@ export default function Loading(props: loadingInterval) {
         />
         <div className="absolute flex flex-col inset-0 justify-center items-center">
           <Image className="mb-5" src={icnLogo} alt="ICN logo" />
-          <div className="text-black text-2xl font-normal mb-16">Present</div>
+          <div className="text-black text-2xl font-normal mb-16 font-gyahegi">
+            Present
+          </div>
           <div className="h-5 w-4/5 bg-[#7E90B7] rounded-lg mb-7">
             <div
               className="h-5 bg-blue-950 rounded-lg"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <div className="text-black text-base font-normal">{text}</div>
+          <div className="text-black text-base font-normal font-montserrat">
+            {text}
+          </div>
         </div>
       </div>
     )

@@ -1,13 +1,20 @@
-import Navbar from "./components/Navbar";
-import Synopsis from "./components/Synopsis";
-import Tickets from "./components/Tickets";
-import Footer from "./(components)/footer";
+"use client";
+
+import Navbar from "./(components)/Navbar";
+import Tickets from "./(components)/Tickets";
+import React, { useEffect } from "react";
+import Synopsis from "./(components)/Synopsis";
 import Loading from "./(components)/loading";
+import Footer from "./(components)/footer";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
-      <Loading interval={2000} />
+      <Loading interval={1500} />
       <Navbar />
       <Tickets />
       <Synopsis />

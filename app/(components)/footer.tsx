@@ -22,7 +22,7 @@ export default function Footer() {
           <Image src={facebook} alt="Facebook Button" />
           <Image src={youtube} alt="Youtube Button" />
         </div>
-        <div className="flex rounded-lg border border-white shadow-lg w-36 h-9 items-center justify-center transition duration-300 ease-in-out hover:bg-white hover:text-black ">
+        <div className="flex rounded-lg border border-white text-white font-montserrat shadow-lg w-36 h-9 items-center justify-center transition duration-300 ease-in-out hover:bg-white hover:text-black ">
           Buy Tickets
         </div>
       </div>
