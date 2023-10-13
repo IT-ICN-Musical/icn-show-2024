@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
 
+// components
+import Navbar from './components/Navbar'
+
 const gyahegi = localFont({
   src: "./Gyahegi.otf",
   variable: "--font-gyahegi",
@@ -23,7 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} ${gyahegi.variable}`}>{children}</body>
+      <body className={`${montserrat.className} ${gyahegi.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
