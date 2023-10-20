@@ -8,7 +8,36 @@
 
 .embla__slide {
   flex: 0 0 auto;
+}
+
+.embla__slide__background {
   min-width: 0;
   max-width: 100%;
 }
 
+.embla__slide__thumb {
+  max-width: 200px;
+}
+
+.shrink {
+  animation-duration: 600ms;
+  animation-name: shrink;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.44, 0, 0.58, 1);
+}
+
+@keyframes shrink {
+  from { width: 200px; }
+  to { width: 150px; }
+}
+
+.unshrink {
+  animation-duration: 600ms;
+  animation-name: unshrink;
+  animation-timing-function: cubic-bezier(0.44, 0, 0.58, 1);
+}
+
+@keyframes unshrink {
+  from { width: 150px; }
+  to { width: 200px;}
+}
