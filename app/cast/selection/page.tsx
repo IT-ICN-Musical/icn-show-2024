@@ -5,9 +5,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { cast } from "../cast";
 import "./embla.css";
-import EmblaThumb from "@/app/components/EmblaThumb";
+import EmblaThumb from "@/app/(components)/EmblaThumb";
 import { AnimatePresence, motion } from "framer-motion";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/(components)/Navbar";
 
 export default function CastSelectionPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -43,10 +43,9 @@ export default function CastSelectionPage() {
     emblaMainApi.on("reInit", onSelect);
   }, [emblaMainApi, onSelect]);
 
-  
   return (
     <div className="w-screen h-screen flex flex-col">
-      <Navbar transparent="transparent"/>
+      <Navbar transparent="transparent" />
       <div className="embla absolute inset-0" ref={emblaMainRef}>
         <div className="embla__container">
           {cast.map((c, index) => (
