@@ -15,6 +15,12 @@ const config: Config = {
       fontFamily: {
         gyahegi: ["var(--font-gyahegi)", "serif"],
       },
+      backgroundImage: {
+        'navbar-gradient':'linear-gradient(90deg,rgba(255,255,255,0.60) 0%,rgba(255,255,255,0.15) 101.64%)',
+      },
+      boxShadow: {
+        'small': '0px 5px 50px 0px rgba(0, 0, 0, 0.05)',
+      }
     },
   },
   plugins: [],
