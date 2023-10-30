@@ -23,14 +23,13 @@ useEffect(() => {
   return (
     <div ref={ref}>
         <motion.div
-        style={{position: 'relative', zIndex: 0}}
             variants={{
-                hidden: {opacity: 0, x: -200},
-                visible: {opacity: 1, x: 0,},
+                hidden: {opacity: 0, x: -200, y: 200},
+                visible: {opacity: 1, x: 0, y: 0},
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{duration: 0.3}}
+            transition={{duration: 0.4, delay: 0.2}}
         >
             {children}
         </motion.div>

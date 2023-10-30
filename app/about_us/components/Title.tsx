@@ -1,0 +1,25 @@
+import React from 'react'
+
+type TitleProps = { activeCard: number }
+
+export default function Title(props: TitleProps) {
+    const toggle = [
+        "opacity-100",
+        "opacity-0"
+    ]
+    let opacity = toggle[0]
+
+    if(props.activeCard === 0) {
+        opacity = toggle[0]
+    }
+    else {
+        opacity = toggle[1]
+    }
+    return (
+        <div className={`${opacity} min-w-[65%] min-h-screen flex items-center justify-center`}>
+            <p className='font-gyahegi text-[64px]'>
+                Our Journey
+            </p>
+        </div>
+    )
+}
