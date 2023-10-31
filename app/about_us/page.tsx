@@ -19,14 +19,17 @@ export default function AboutUsPage() {
   ]
 
   return (
-    <main className={`${backgroundClasses[activeCard]}`}
-    style={{backgroundImage: "linear-gradient(to right, rgba(0,0,0,0), rgba(FB,F8,F3,1)"}}>
+    <main className='bg-[#FBF8F3] relative overflow-hidden'>
+
+      <div className={`${backgroundClasses[activeCard]} w-full h-screen absolute bg-no-repeat`} />
+      <div className='absolute top-[-120%] left-[-27%] w-[3100px] h-[3100px] rounded-[100%]' style={{background: 'radial-gradient(30.77% 30.77% at 30.77% 50%, rgba(251, 248, 243, 0.00) 61.6%, #FBF8F3 100%)'}} />
+      
       <div className='w-[100%] h-screen flex items-center justify-center'>
 
         <Title activeCard={activeCard}/>
 
         <div className='w-[35%] h-screen flex items-center justify-center'>
-          <div className='w-[100%] h-[80%] mb-[5%] flex self-end justify-center overflow-auto no-scrollbar space-x-[10%]'
+          <div className='w-[100%] h-[80%] mb-[5%] flex self-end justify-center overflow-auto no-scrollbar space-x-[2%]'
           style={{WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%"}}>
             <div className='min-h-[1020px] flex mt-[115px]'>
               <Image
