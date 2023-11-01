@@ -4,7 +4,7 @@ import React from 'react'
 import ActiveCard from './ActiveCard'
 import Image from 'next/image'
 
-type CardProps = { year: string, name: string, logo: string, isActive: boolean, onShow: React.MouseEventHandler<HTMLButtonElement>}
+type CardProps = { year: string, name: string, logo: string, isActive: boolean, onShow: React.MouseEventHandler<HTMLButtonElement> }
 
 export default function Card(props: CardProps) {
   if(props.isActive) {
