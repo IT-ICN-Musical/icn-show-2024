@@ -23,17 +23,17 @@ export default function Card(props: BackgroundProps) {
     if(props.isActive) {
         return (
             <div className='w-full h-screen absolute'>
-            <motion.div
-                key={props.activeCard}
-                initial={{ opacity: 0.8 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                duration: 2,
-                delaty: 1,
-                ease: [0, 0.71, 0.2, 1.01]
-                }}>
-                <Image src={bgImage} alt='background' width={1500} height={1500} priority={true}/>
-            </motion.div>
+                <motion.div
+                    key={props.activeCard}
+                    initial={{ opacity: 0.8 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                    duration: 2,
+                    delaty: 1,
+                    ease: [0, 0.71, 0.2, 1.01]}}
+                >
+                    <Image src={bgImage} alt='background' width={1500} height={1500} priority={true}/>
+                </motion.div>
             </div>
         )     
     }
