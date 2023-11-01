@@ -33,27 +33,10 @@ export default function AboutUsPage() {
 
   return (
     <main className='bg-[#FBF8F3] relative overflow-hidden'>
-      {/* <div className={`${backgroundClasses[activeCard]} w-full h-screen absolute bg-no-repeat`} /> */}
-      <Background isActive={activeCard !== 0} activeCard={activeCard}/>
-      {/* <motion.div
-        className='w-full h-screen absolute flex justify-start border-2 border-black'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 2,
-          ease: [0, 0.71, 0.2, 1.01]
-        }}
-      >
-        <Image
-          className='border-2 border-red-600 flex self-start object-cover'
-          src={backgroundImages[activeCard]}
-          alt='background'
-          fill
-          priority={true}
-        />
-      </motion.div> */}
 
-      <div className='absolute top-[-120%] left-[-27%] w-[3100px] h-[3100px] rounded-[100%]' 
+      <Background isActive={activeCard !== 0} activeCard={activeCard}/>
+
+      <div className='absolute top-[-120%] left-[-27%] w-[165%] h-[340%] rounded-[100%]' 
       style={{background: 'radial-gradient(30.77% 30.77% at 30.77% 50%, rgba(251, 248, 243, 0.00) 61.6%, #FBF8F3 100%)'}} />
       
       <div className='w-[100%] h-screen flex items-center justify-center'>
