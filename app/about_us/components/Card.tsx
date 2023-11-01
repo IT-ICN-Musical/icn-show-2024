@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import ActiveCard from './ActiveCard'
 import Image from 'next/image'
