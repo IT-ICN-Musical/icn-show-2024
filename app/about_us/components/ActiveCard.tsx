@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaArrowRight } from "react-icons/fa"
+import { motion } from 'framer-motion'
 
 type ActiveCardProps = { year: string, name: string, logo: string }
 
@@ -15,7 +16,7 @@ export default function ActiveCard(props: ActiveCardProps) {
         style={{maskImage: "linear-gradient(to right, rgb(0,0,0,0), rgb(0,0,0,1))", WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))"}}
         src='/batik_minang.svg'
         alt='batik'
-        layout='fill'
+        fill
       />
       <div className='max-w-[50%] h-[100%] flex flex-col py-[12px] justify-between items-stretch self-start'>
         <div className='self-start'>
@@ -27,20 +28,36 @@ export default function ActiveCard(props: ActiveCardProps) {
           <p className='font-gyahegi text-[16px] mt-[5%]'>
             {props.name}
           </p>
-          <p className='text-[10px] mt-[10%]'>
+          <motion.p 
+            className='text-[10px] mt-[10%]'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 3,
+              ease: [0, 0.71, 0.2, 1.01]
+            }}
+          >
             Read More <FaArrowRight className='inline' />
-          </p>
+          </motion.p>
         </div>
       </div>
-      <div className='flex max-w-[45%] max-h-[75%] justify-right relative'>
-        <Image
-          className='object-contain'
-          src={props.logo}
-          alt={props.name}
-          width={160}
-          height={160}
-        />
-      </div>
+      <motion.div 
+        className='flex max-w-[45%] max-h-[75%] justify-right relative pl-[5%]'
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 0.8,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+      >
+          <Image
+            className='object-contain'
+            src={props.logo}
+            alt={props.name}
+            width={160}
+            height={160}
+          />
+      </motion.div>
       
     </button>
   )

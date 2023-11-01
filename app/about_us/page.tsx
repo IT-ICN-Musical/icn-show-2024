@@ -1,13 +1,15 @@
 'use client'
 
 import React, { useState } from "react"
+import { motion } from "framer-motion"
 import Image from "next/image"
+import Background from "./components/Background"
 import Card from "./components/Card"
 import Title from "./components/Title"
 
 export default function AboutUsPage() {
   const [activeCard, setActiveCard] = useState(0)
-  const backgroundClasses =[
+  const backgroundClasses = [
     "bg-[#FBF8F3]",
     "bg-saujana",
     "bg-nilanka",
@@ -18,16 +20,44 @@ export default function AboutUsPage() {
     "bg-angkara"
   ]
 
+  const backgroundImages = [
+    "batik_minang.svg",
+    "/saujana_bg.svg",
+    "/nilanka_bg.svg",
+    "/arunika_bg.svg",
+    "/lakonna_bg.svg",
+    "/nirwata_bg.svg",
+    "/nilam_bg.svg",
+    "/angkara_bg.svg"
+  ]
+
   return (
     <main className='bg-[#FBF8F3] relative overflow-hidden'>
+      {/* <div className={`${backgroundClasses[activeCard]} w-full h-screen absolute bg-no-repeat`} /> */}
+      <Background isActive={activeCard !== 0} activeCard={activeCard}/>
+      {/* <motion.div
+        className='w-full h-screen absolute flex justify-start border-2 border-black'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 2,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+      >
+        <Image
+          className='border-2 border-red-600 flex self-start object-cover'
+          src={backgroundImages[activeCard]}
+          alt='background'
+          fill
+          priority={true}
+        />
+      </motion.div> */}
 
-      <div className={`${backgroundClasses[activeCard]} w-full h-screen absolute bg-no-repeat`} />
-      <div className='absolute top-[-120%] left-[-27%] w-[3100px] h-[3100px] rounded-[100%]' style={{background: 'radial-gradient(30.77% 30.77% at 30.77% 50%, rgba(251, 248, 243, 0.00) 61.6%, #FBF8F3 100%)'}} />
+      <div className='absolute top-[-120%] left-[-27%] w-[3100px] h-[3100px] rounded-[100%]' 
+      style={{background: 'radial-gradient(30.77% 30.77% at 30.77% 50%, rgba(251, 248, 243, 0.00) 61.6%, #FBF8F3 100%)'}} />
       
       <div className='w-[100%] h-screen flex items-center justify-center'>
-
         <Title activeCard={activeCard}/>
-
         <div className='w-[35%] h-screen flex items-center justify-center'>
           <div className='w-[100%] h-[80%] mb-[5%] flex self-end justify-center overflow-auto no-scrollbar space-x-[2%]'
           style={{WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%"}}>
@@ -40,25 +70,19 @@ export default function AboutUsPage() {
                 height={1020}
                 />
             </div>
-            <div className='w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]'>  
+            <div className='w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]'>
               <Card year='2023' name='Saujana' logo='/saujana.svg' isActive={activeCard === 1} onShow={() => setActiveCard(1)}/>
-
               <Card year='2020' name='Nilanka' logo='/nilanka.svg' isActive={activeCard === 2} onShow={() => setActiveCard(2)}/>
-              
               <Card year='2019' name='Arunika' logo='/arunika.svg' isActive={activeCard === 3} onShow={() => setActiveCard(3)}/>
-
               <Card year='2018' name='Lakonna' logo='/lakonna.svg' isActive={activeCard === 4} onShow={() => setActiveCard(4)}/>
-
               <Card year='2016' name='Nirwata' logo='/nirwata.svg' isActive={activeCard === 5} onShow={() => setActiveCard(5)}/>
-
               <Card year='2015' name='Nilam' logo='/nilam.svg' isActive={activeCard === 6} onShow={() => setActiveCard(6)}/>
-
               <Card year='2014' name='Angkara' logo='/angkara.svg' isActive={activeCard === 7} onShow={() => setActiveCard(7)}/>
             </div>
           </div>
         </div>
-        
       </div>
+
     </main>
   )
 }
