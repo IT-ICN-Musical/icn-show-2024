@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 type PropType = {
   index: number;
   selected: boolean;
-  shrinked: boolean;
+  shrinked: boolean | undefined;
   img: {
     src: StaticImageData;
     alt: string;
@@ -28,6 +28,9 @@ export default function EmblaThumb({
     if (shrinked) {
       shrinkRef.current?.classList.remove("unshrink");
       shrinkRef.current?.classList.add("shrink");
+    } else if (shrinked === false) {
+      shrinkRef.current?.classList.remove("shrink");
+      shrinkRef.current?.classList.add("unshrink");
     }
   }, [shrinked]);
 
