@@ -9,7 +9,7 @@ import Title from "./components/Title"
 
 export default function AboutUsPage() {
   const [activeCard, setActiveCard] = useState(0)
-
+  
   return (
       <main className='bg-[#FBF8F3] relative overflow-hidden'>
         

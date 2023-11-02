@@ -1,14 +1,12 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import Buttons from '../components/Buttons'
 
 export default function page() {
   return (
-    <main className='bg-[#FBF8F3]'>
+    <main className='bg-[#FBF8F3] overflow-hidden'>
 
-        <div className='w-[100%] h-screen overflow-hidden'>
+        <div className='w-[100%] h-screen'>
 
             <div className='flex w-[100%] justify-center items-center mt-[8%] space-x-[5%]'>
                 <Image
@@ -23,14 +21,17 @@ export default function page() {
                 </p>
             </div>
 
-            <div className='flex w-[100%] justify-center items-center mt-[3%] space-x-[6%] px-[10%]'>
-                <Image
-                className='flex object-cover rounded-2xl'
-                    src='/saujana_bg.svg'
-                    alt="saujana"
-                    width={650}
-                    height={650}
-                />
+            <div className='flex w-[100%] justify-center mt-[3%] space-x-[6%] px-[10%]'>
+                <div className=' flex max-w-[60%] self-start'>
+                    <Image
+                    className='flex object-cover rounded-2xl self-start'
+                        src='/saujana_bg.svg'
+                        alt='saujana_bg'
+                        width={650}
+                        height={650}
+                        loading='lazy'
+                    />
+                </div>
                 <div className='grid grid-cols-1 max-w-[40%] self-start'>
                     <p className='text-md'>
                         In the fog of war of the constant moral battles that are waged amongst us these days, we often forget those that are left behind...
@@ -44,18 +45,7 @@ export default function page() {
                         <br/><br/>
                     </p>
                     <div className='space-x-[5%]'>
-                        <button 
-                            className='px-[3%] py-[1%] text-black bg-white border-2 border-white rounded-lg drop-shadow-md 
-                            hover:border-[#E8C67A] hover:text-[#E8C67A] duration-300'
-                        > 
-                            Back
-                        </button>
-                        <button className='px-[3%] py-[1%] text-black bg-white border-2 border-white rounded-lg drop-shadow-md 
-                            hover:border-[#E8C67A] hover:text-[#E8C67A] duration-300'
-                        > 
-                            Watch Trailer
-                        </button>
-                        
+                        <Buttons name={'saujana'} />
                     </div>
                 </div>
             </div>
