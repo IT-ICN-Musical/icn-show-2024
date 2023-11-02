@@ -1,6 +1,7 @@
 import React from 'react'
-import ActiveCard from './ActiveCard'
 import Image from 'next/image'
+import ActiveCard from './ActiveCard'
+
 
 type CardProps = { year: string, name: string, logo: string, isActive: boolean, onShow: React.MouseEventHandler<HTMLButtonElement> }
 
