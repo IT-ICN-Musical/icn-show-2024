@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import Image from "next/image";
+import LoadImages from "./components/LoadImages"
 import Background from "./components/Background"
 import Card from "./components/Card"
 import Title from "./components/Title"
@@ -11,7 +12,8 @@ export default function AboutUsPage() {
 
   return (
       <main className='bg-[#FBF8F3] relative overflow-hidden'>
-
+        
+        <LoadImages />
         <Background isActive={activeCard !== 0} activeCard={activeCard}/>
 
         <div className='absolute top-[-120%] left-[-27%] w-[165%] h-[340%] rounded-[100%]' 
