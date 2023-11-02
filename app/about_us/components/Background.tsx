@@ -24,7 +24,7 @@ export default function Card(props: BackgroundProps) {
                     initial={{ opacity: 0.8 }}
                     animate={{ opacity: 1 }}
                     transition={{
-                    duration: 2,
+                    duration: 2.5,
                     ease: [0, 0.71, 0.2, 1.01]}}
                 >
                     <Image src={backgroundImages[props.activeCard-1]} alt='background' width={1500} height={1500} priority={true}/>
