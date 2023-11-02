@@ -27,7 +27,13 @@ export default function Card(props: BackgroundProps) {
                     duration: 2.5,
                     ease: [0, 0.71, 0.2, 1.01]}}
                 >
-                    <Image src={backgroundImages[props.activeCard-1]} alt='background' width={1500} height={1500} priority={true}/>
+                    <Image 
+                        src={backgroundImages[props.activeCard-1]} 
+                        alt='background' 
+                        width={1500} 
+                        height={1500} 
+                        priority={true}
+                    />
                 </motion.div>
             </div>
         )     
