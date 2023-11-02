@@ -7,51 +7,44 @@ export default function LoadImages() {
         <Image
             className='opacity-0 absolute'
             src='/saujana_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='saujana_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/nilanka_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='nilanka_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/arunika_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='arunika_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/lakonna_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='lakonna_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/nirwata_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='nirwata_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/nilam_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='nilam_load'
+            fill
             />
             <Image
             className='opacity-0 absolute'
             src='/angkara_bg.svg'
-            alt='bgtest'
-            width={200}
-            height={200}
+            alt='angkara_load'
+            fill
             />
         </>
   )
