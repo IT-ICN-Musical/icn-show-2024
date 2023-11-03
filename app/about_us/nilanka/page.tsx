@@ -17,7 +17,7 @@ const text: React.ReactNode =
         Yet, her father hardly even lets her out of the palace walls.
         A retelling of the Batak folklore 'Dayang Bandir and Sandean Raja', Nilanka chronicles the characters' intertwined journey in fighting for their own purpose. 
         When a decision goes wrong, one step could change the course of their lives - forever.
-</p>
+    </p>
 )
 
 export default function page() {

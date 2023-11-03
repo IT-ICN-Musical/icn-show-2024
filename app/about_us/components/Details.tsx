@@ -23,7 +23,7 @@ export default function page(props: DetailsProps) {
                 </p>
             </div>
 
-            <div className='flex w-[100%] justify-center mt-[3%] space-x-[6%] px-[10%]'>
+            <div className='flex w-[100%] justify-center mt-[5%] space-x-[6%] px-[10%]'>
                 <div className='flex max-w-[60%] self-start'>
                     <Image
                         className='rounded-2xl'
