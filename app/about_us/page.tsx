@@ -31,7 +31,7 @@ export default function AboutUsPage() {
                   alt='timeline'
                   width={15}
                   height={1020}
-                  />
+                />
               </div>
               <div className='w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]'>
                 <Card year='2023' name='Saujana' logo='/saujana.svg' isActive={activeCard === 1} onShow={() => setActiveCard(1)}/>
