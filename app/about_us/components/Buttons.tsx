@@ -6,7 +6,7 @@ type ButtonProps = {name: string}
 
 export default function Buttons( props: ButtonProps ) {
     const trailers = {
-        'saujana': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygULcmljayBhc3RsZXk%3D',
+        'saujana': 'https://www.youtube.com/watch?v=U0BXt2__S7Y&t=2s&pp=ygUTaWNuIHNhdWphbmEgdHJhaWxlcg%3D%3D',
         'nilanka': 'https://www.youtube.com/watch?v=GoxZTlc2bFs&pp=ygUTaWNuIG5pbGFua2EgdHJhaWxlcg%3D%3D',
         'arunika': 'https://www.youtube.com/watch?v=SclgRDH05JM&pp=ygUSaWNuIGFydW5pa2F0cmFpbGVy',
         'lakonna': 'https://www.youtube.com/watch?v=x6btfYvzqj0&pp=ygUTaWNuIGxha29ubmEgdHJhaWxlcg%3D%3D',

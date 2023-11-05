@@ -50,13 +50,13 @@ export default function ActiveCard(props: ActiveCardProps) {
             ease: [0, 0.71, 0.2, 1.01]
           }}
         >
-            <Image
-              className='object-contain'
-              src={props.logo}
-              alt={props.name}
-              width={160}
-              height={160}
-            />
+          <Image
+            className='object-contain'
+            src={props.logo}
+            alt={props.name}
+            width={160}
+            height={160}
+          />
         </motion.div>
       </button>
     </Link>
