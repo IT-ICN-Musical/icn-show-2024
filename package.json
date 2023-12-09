@@ -16,6 +16,7 @@
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.0.0-rc14",
     "framer": "^2.4.1",
+    "embla-carousel-react": "^8.0.0-rc14",
     "framer-motion": "^10.16.4",
     "next": "^13.4.19",
     "postcss": "8.4.29",

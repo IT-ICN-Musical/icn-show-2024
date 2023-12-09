@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} ${gyahegi.variable}`}>
+      <body
+        className={`${montserrat.className} ${gyahegi.variable} overflow-hidden`}
+      >
         {children}
       </body>
     </html>
