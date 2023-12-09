@@ -20,7 +20,7 @@ const config: Config = {
       },
       boxShadow: {
         'small': '0px 5px 50px 0px rgba(0, 0, 0, 0.05)',
-      }
+      },
     },
   },
   plugins: [],
