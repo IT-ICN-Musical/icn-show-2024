@@ -12,7 +12,7 @@ const gyahegi = localFont({
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ICN Show 2024",
+  title: "ICN 2024 Musical: Kaharsa",
   description: "Buy your tickets here",
 };
 
@@ -23,7 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} ${gyahegi.variable}`}>
+      <head>
+        <link rel="icon" href="/images/ICN-logo.png" />
+      </head>
+      <body
+        className={`${montserrat.className} ${gyahegi.variable}`}
+        suppressHydrationWarning={true}
+      >
         <ShoppingCartProvider>{children}</ShoppingCartProvider>
       </body>
     </html>

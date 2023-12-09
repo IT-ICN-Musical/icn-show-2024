@@ -3,10 +3,10 @@ import React from "react";
 import NavbarShop from "./(components)/NavbarShop";
 import items from "./data.json";
 import { StoreItem } from "./(components)/StoreItem";
-import Footer from "../(components)/footer";
+
 const Page: React.FC = () => {
   return (
-    <div>
+    <main>
       <NavbarShop />
       <div className="container mx-auto">
         <div className="mt-10 font-bold text-4xl mb-6">Products</div>
@@ -18,7 +18,7 @@ const Page: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
