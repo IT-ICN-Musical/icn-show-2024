@@ -10,7 +10,7 @@ export default function Tickets() {
   return (
     <main className="bg-[url('/batik-betawi.png')] min-h-[100%] h-screen bg-cover bg-center">
         <div className="h-screen w-[100%] flex justify-center items-center">
-            <div className="inline-flex p-[3rem] justify-center items-center absolute space-x-[5.25rem] bg-white rounded-[4rem]">
+            <div className="inline-flex p-[3rem] justify-center items-center space-x-[5.25rem] bg-white rounded-[4rem]">
                 <div className="bg-[url('/TicketImage.png')] w-[30rem] h-[13rem] bg-cover bg-center rounded-[1.25rem]" />
                 <div className="flex flex-col gap-[24px] ">
                     <div className="flex flex-start align-start gap-[24px]">
