@@ -34,20 +34,21 @@ export default function Navbar(props: Props) {
             quality={100}
           />
         </div>
-        <div className="flex space-x-[1.5rem]">
-          <Button url="">Home</Button>
-          <Button url="cast">Cast</Button>
-          <Button url="about-us">About Us</Button>
-          <Button url="home" color="dark" animate="animate">
-            Buy Tickets
-          </Button>
-        </div>
-
-        {shoppingCartQuantity > 0 && props.attribute === "shop" && (
-          <div>
-            <ShoppingCart />
+        <div className="flex flex-row items-center space-x-[1.5rem]">
+          <div className="flex flex-row h-fit">
+            <Button url="home">Home</Button>
+            <Button url="cast">Cast</Button>
+            <Button url="about-us">About Us</Button>
+            <Button url="home" color="dark" animate="animate">
+              Buy Tickets
+            </Button>
           </div>
-        )}
+          {shoppingCartQuantity > 0 && props.attribute === "shop" && (
+            <div>
+              <ShoppingCart />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
