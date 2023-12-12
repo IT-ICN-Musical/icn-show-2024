@@ -14,9 +14,9 @@ import {
 import { Label } from "./(utils)/Label";
 import { Input } from "./(utils)/Input";
 import { Button } from "./(utils)/Button";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 
-export default function Checkout() {
+export default function CheckoutDialog() {
   const { removeAllItems } = useShoppingCart();
   const [buyerName, setBuyerName] = useState<string>();
   const [buyerEmail, setBuyerEmail] = useState<string>();

@@ -1,4 +1,5 @@
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useState } from "react";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import { Button } from "./(utils)/Button";
 import {
   Dialog,
@@ -21,8 +22,9 @@ type StoreItemProps = {
 
 export default function EditAudienceDialog(props: StoreItemProps) {
   const { getItemProducts, setItemProducts } = useShoppingCart();
-
+  const [isEditing, setIsEditing] = useState(false);
   const products = getItemProducts(props.id);
+
   const handleDeleteProduct = (productId: number) => {
     const updatedProducts = products.filter(
       (product) => product.productId !== productId
@@ -33,32 +35,32 @@ export default function EditAudienceDialog(props: StoreItemProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="secondary"
-          className="py-2 px-4 rounded mt-1 mb-0.5 w-1/5"
-        >
-          <i className="fa fa-pencil" />
+        <Button variant="secondary" className="py-2 px-4 rounded mt-1 mb-0.5">
+          Edit Order
         </Button>
       </DialogTrigger>
       <DialogContent>
         {products.map((product) => (
           <div key={product.productId} className="mb-2">
             <DialogHeader>
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center mb-2">
                 <Label
                   className="text-lg font-bold"
                   htmlFor={`Product ${product.productId}`}
                 >
                   Product {product.productId}
                 </Label>
-                <div className="space-x-2 mr-3">
-                  <Button
-                    variant="secondary"
-                    onClick={() => handleDeleteProduct(product.productId)}
-                    size={"icon"}
-                  >
-                    <i className="fa fa-pencil" />
-                  </Button>
+                <div className="space-x-2 ml-6">
+                  {isEditing ? (
+                    <Button onClick={() => setIsEditing(false)}>
+                      Save Changes
+                    </Button>
+                  ) : (
+                    <Button size={"icon"} onClick={() => setIsEditing(true)}>
+                      <i className="fa fa-pencil" />
+                    </Button>
+                  )}
+
                   <Button
                     variant="destructive"
                     onClick={() => handleDeleteProduct(product.productId)}
@@ -71,17 +73,26 @@ export default function EditAudienceDialog(props: StoreItemProps) {
             </DialogHeader>
 
             <div className="grid grid-cols-2 gap-2">
-              {product.audience.map((audience) => (
-                <Input key={audience.audienceId} value={audience.name || ""} />
+              {product.audience.map((audience, index) => (
+                <Input
+                  disabled={!isEditing}
+                  key={audience.audienceId}
+                  value={audience.name || ""}
+                  autoFocus={isEditing && index === 0}
+                  className={`${
+                    isEditing
+                      ? ""
+                      : "border-none disabled:cursor-default disabled:opacity-100"
+                  }`}
+                />
               ))}
             </div>
           </div>
         ))}
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button>Close</Button>
           </DialogClose>
-          <Button>Okay</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -1,4 +1,4 @@
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import { Button } from "./(utils)/Button";
 import { Dialog, DialogTrigger, DialogContent } from "./(utils)/Dialog";
 import { Label } from "./(utils)/Label";

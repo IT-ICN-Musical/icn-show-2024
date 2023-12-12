@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./(utils)/Dialog";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import { Input } from "./(utils)/Input";
 import { Button } from "./(utils)/Button";
 import { Label } from "./(utils)/Label";

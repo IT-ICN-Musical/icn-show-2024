@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
-import { ShoppingCartProvider } from "./store/context/ShoppingCartContext";
+import { ShoppingCartProvider } from "./store/(context)/ShoppingCartContext";
 
 const gyahegi = localFont({
   src: "./Gyahegi.otf",

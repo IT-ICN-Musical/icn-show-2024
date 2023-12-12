@@ -1,5 +1,5 @@
 import { CartItem } from "./CartItem";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import {
   Sheet,
   SheetContent,
@@ -9,7 +9,7 @@ import {
 } from "./(utils)/Sheet";
 
 import storeItems from "../data.json";
-import Checkout from "./Checkout";
+import CheckoutDialog from "./CheckoutDialog";
 
 export default function ShoppingCart() {
   const { getItemQuantity, cartItems, cartQuantity } = useShoppingCart();
@@ -62,7 +62,7 @@ export default function ShoppingCart() {
           }, 0)}
         </div>
         <SheetFooter>
-          <Checkout />
+          <CheckoutDialog />
         </SheetFooter>
       </SheetContent>
     </Sheet>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import storeItems from "../data.json";
 
 type CartItemProps = {

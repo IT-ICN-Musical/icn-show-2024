@@ -2,17 +2,22 @@
 
 import Image from "next/image";
 import ICNLogo from "/public/ICN-logo.png";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
-
+import ShoppingCart from "../store/(components)/ShoppingCart";
+import { useShoppingCart } from "../store/(context)/ShoppingCartContext";
 type Props = {
   attribute?: "transparent" | "shop";
 };
 
 export default function Navbar(props: Props) {
-  if (props.disable) return null;
+  const { cartQuantity } = useShoppingCart();
+  const [shoppingCartQuantity, setShoppinggCartQuantity] = useState(0);
+  useEffect(() => {
+    setShoppinggCartQuantity(cartQuantity);
+  }, [cartQuantity]);
   return (
-    <nav className="w-full z-50 pt-10">
+    <div className="w-full z-50 pt-10">
       <div
         className={`flex w-[77.5rem] mx-auto shadow-sm px-16 py-4 rounded-full justify-between items-center ${
           props.attribute === "transparent"
@@ -37,7 +42,13 @@ export default function Navbar(props: Props) {
             Buy Tickets
           </Button>
         </div>
+
+        {shoppingCartQuantity > 0 && props.attribute === "shop" && (
+          <div>
+            <ShoppingCart />
+          </div>
+        )}
       </div>
-    </nav>
+    </div>
   );
 }

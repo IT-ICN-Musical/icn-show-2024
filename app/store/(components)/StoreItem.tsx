@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import React, { useEffect, useState } from "react";
+import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import ViewProductDialog from "./ViewProductDialog";
 import {
   Card,
@@ -9,7 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./(utils)/card";
+} from "./(utils)/Card";
 import { Label } from "./(utils)/Label";
 
 type StoreItemProps = {
@@ -22,8 +22,13 @@ type StoreItemProps = {
 
 export function StoreItem(props: StoreItemProps) {
   const { getItemQuantity } = useShoppingCart();
+  const [quantity, setQuantity] = useState(0);
 
-  const quantity = getItemQuantity(props.id);
+  useEffect(() => {
+    const quantityValue = getItemQuantity(props.id);
+    setQuantity(quantityValue);
+  }, [getItemQuantity, props.id]);
+
   return (
     <Card className="lg:max-w-md w-full rounded-xl">
       <CardHeader className="block p-0">
