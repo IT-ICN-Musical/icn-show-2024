@@ -5,7 +5,7 @@ import Tickets from "./(components)/Tickets";
 import React, { useEffect } from "react";
 import Synopsis from "./(components)/Synopsis";
 import Loading from "./(components)/loading";
-import Footer from "./(components)/footer";
+import Footer from "./(components)/Footer";
 
 export default function Home() {
   useEffect(() => {

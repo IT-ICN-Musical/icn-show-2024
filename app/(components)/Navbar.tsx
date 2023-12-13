@@ -19,7 +19,7 @@ export default function Navbar(props: Props) {
   return (
     <div className="w-full z-50 pt-10">
       <div
-        className={`flex w-[77.5rem] mx-auto shadow-sm px-16 py-4 rounded-full justify-between items-center ${
+        className={`flex w-4/5 mx-auto shadow-sm px-16 py-4 rounded-full justify-between items-center ${
           props.attribute === "transparent"
             ? "backdrop-blur-[15px] bg-navbar-gradient border-1 border-white border-[1px]"
             : "bg-white"

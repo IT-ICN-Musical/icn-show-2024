@@ -18,7 +18,7 @@ type StoreItemProps = {
 };
 
 export default function ViewProductDialogContent(props: StoreItemProps) {
-  const { getItemQuantity, removeFromCart } = useShoppingCart();
+  const { getItemQuantity } = useShoppingCart();
 
   const quantity = getItemQuantity(props.id);
   return (
@@ -43,7 +43,7 @@ export default function ViewProductDialogContent(props: StoreItemProps) {
               <div className="flex justify-end">
                 <EditAudienceDialog {...props} />
                 <AlertDialog>
-                  <AlertDialogTrigger>
+                  <AlertDialogTrigger asChild>
                     <Button
                       variant="destructive"
                       className="py-2 px-4 rounded mt-1 ml-1 mb-0.5 w-1/5"

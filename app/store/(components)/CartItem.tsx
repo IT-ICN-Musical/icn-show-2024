@@ -46,7 +46,7 @@ export function CartItem(props: CartItemProps) {
                 <Button
                   size={null}
                   variant="ghost"
-                  className="text-slate-500 mr-3 text-lg"
+                  className="text-slate-500 ml-3 text-lg"
                 >
                   <i className="fa fa-pencil" />
                 </Button>
@@ -54,11 +54,11 @@ export function CartItem(props: CartItemProps) {
               <ViewProductDialogContent {...item} />
             </Dialog>
             <AlertDialog>
-              <AlertDialogTrigger>
+              <AlertDialogTrigger asChild>
                 <Button
                   size={null}
                   variant="ghost"
-                  className="text-slate-500 text-lg"
+                  className="text-slate-500 ml-3 text-lg"
                 >
                   <i className="fa fa-trash" />
                 </Button>

@@ -32,7 +32,7 @@ export default function ShoppingCart() {
           </div>
         </button>
       </SheetTrigger>
-      <SheetContent className="!w-1/4 !sm:w-full !max-w-none">
+      <SheetContent className="w-full md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 !max-w-none">
         <SheetTitle className="pb-2 font-bold text-3xl mb-3 mt-4">
           My Cart
         </SheetTitle>
