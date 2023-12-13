@@ -5,6 +5,8 @@ import { Button } from "./(utils)/Button";
 import { Separator } from "./(utils)/Separator";
 import ViewProductDialogContent from "./ViewProductDialogContent";
 import { Dialog, DialogTrigger } from "./(utils)/Dialog";
+import { AlertDialog, AlertDialogTrigger } from "./(utils)/AlertDialog";
+import DeleteAlertDialogContent from "./DeleteAlertDialogContent";
 
 type CartItemProps = {
   id: number;
@@ -51,15 +53,18 @@ export function CartItem(props: CartItemProps) {
               </DialogTrigger>
               <ViewProductDialogContent {...item} />
             </Dialog>
-
-            <Button
-              size={null}
-              variant="ghost"
-              className="text-slate-500 text-lg"
-              onClick={() => removeFromCart(props.id)}
-            >
-              <i className="fa fa-trash" />
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Button
+                  size={null}
+                  variant="ghost"
+                  className="text-slate-500 text-lg"
+                >
+                  <i className="fa fa-trash" />
+                </Button>
+              </AlertDialogTrigger>
+              <DeleteAlertDialogContent id={props.id} />
+            </AlertDialog>
           </div>
           <div className="text-lg font-semibold mt-3">
             ${`${item.price * props.quantity}`}

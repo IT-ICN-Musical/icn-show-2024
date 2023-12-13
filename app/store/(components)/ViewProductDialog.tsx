@@ -8,6 +8,7 @@ type StoreItemProps = {
   name: string;
   numTickets: number;
   price: number;
+  stock: number;
   imgUrl: string;
 };
 

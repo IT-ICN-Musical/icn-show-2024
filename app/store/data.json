@@ -4,20 +4,23 @@
     "name": "Matinee - Single",
     "numTickets": 1,
     "price": 20,
+    "stock": 10,
     "imgUrl": "/images/store/book.jpg"
   },
   {
     "id": 2,
     "name": "Matinee - Bundle",
     "numTickets": 5,
-    "price": 22,
+    "price": 90,
+    "stock": 10,
     "imgUrl": "/images/store/computer.jpg"
   },
   {
     "id": 3,
     "name": "Night - Single",
     "numTickets": 1,
-    "price": 90,
+    "price": 22,
+    "stock": 10,
     "imgUrl": "/images/store/banana.jpg"
   },
   {
@@ -25,6 +28,7 @@
     "name": "Night - Bundle",
     "numTickets": 5,
     "price": 100,
+    "stock": 10,
     "imgUrl": "/images/store/car.jpg"
   }
 ]
