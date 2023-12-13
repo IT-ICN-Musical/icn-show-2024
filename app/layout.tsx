@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { ShoppingCartProvider } from "./store/(context)/ShoppingCartContext";
 
 const gyahegi = localFont({
   src: "./Gyahegi.otf",
@@ -11,7 +12,7 @@ const gyahegi = localFont({
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ICN Show 2024",
+  title: "ICN 2024 Musical: Kaharsa",
   description: "Buy your tickets here",
 };
 
@@ -22,10 +23,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/ICN-logo.png" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+      </head>
       <body
-        className={`${montserrat.className} ${gyahegi.variable} overflow-hidden`}
+        className={`${montserrat.className} ${gyahegi.variable}`}
+        suppressHydrationWarning={true}
       >
-        {children}
+        <ShoppingCartProvider>{children}</ShoppingCartProvider>
       </body>
     </html>
   );

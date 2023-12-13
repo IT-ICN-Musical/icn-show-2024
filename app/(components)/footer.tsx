@@ -15,7 +15,7 @@ export default function Footer() {
         alt="Batik Minang"
         objectFit="cover"
       />
-      <div className="flex absolute inset-0 flex items-center justify-between px-48">
+      <div className="flex absolute inset-0 items-center justify-between px-48">
         <Image src={icnLogo} alt="ICN logo" />
         <div className="flex1 flex w-72 items-center justify-between">
           <Image src={instagram} alt="Instagram Button" />
