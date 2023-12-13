@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   DialogClose,
@@ -21,10 +21,54 @@ export default function CheckoutDialog() {
   const [buyerName, setBuyerName] = useState<string>();
   const [buyerEmail, setBuyerEmail] = useState<string>();
   const [buyerTelp, setBuyerTelp] = useState<string>();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isWrongNameInput, setIsWrongNameInput] = useState(false);
+  const [isWrongEmailInput, setIsWrongEmailInput] = useState(false);
+  const [isWrongTelpInput, setIsWrongTelpInput] = useState(false);
   const isCheckoutSuccess = true;
 
+  const clearInput = () => {
+    setBuyerName("");
+    setBuyerEmail("");
+    setBuyerTelp("");
+  };
+
+  const handleCheckoutClick = () => {
+    if (!buyerName || buyerName.trim() === "") {
+      setIsWrongNameInput(true);
+      return;
+    } else {
+      setIsWrongNameInput(false);
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!buyerEmail || !emailRegex.test(buyerEmail)) {
+      setIsWrongEmailInput(true);
+      return;
+    } else {
+      setIsWrongEmailInput(false);
+    }
+
+    const telRegex = /^[0-9+]+$/;
+    if (!buyerTelp || !telRegex.test(buyerTelp)) {
+      setIsWrongTelpInput(true);
+      return;
+    } else {
+      setIsWrongTelpInput(false);
+    }
+
+    isCheckoutSuccess
+      ? (removeAllItems(), console.log(buyerName, buyerEmail, buyerTelp))
+      : null;
+    setIsDialogOpen(false);
+  };
+
+  useEffect(() => {
+    isDialogOpen === false ? clearInput() : null;
+  }, [isDialogOpen]);
+
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button>Checkout</Button>
       </DialogTrigger>
@@ -50,6 +94,11 @@ export default function CheckoutDialog() {
               }}
             />
           </div>
+          {isWrongNameInput && (
+            <p className="text-red-500 mb-1">
+              Warning: Please ensure the name is correct.
+            </p>
+          )}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="email" className="text-right">
               Email
@@ -63,6 +112,11 @@ export default function CheckoutDialog() {
               }}
             />
           </div>
+          {isWrongEmailInput && (
+            <p className="text-red-500 mb-1">
+              Warning: Please ensure the email format is correct.
+            </p>
+          )}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="telephone" className="text-right">
               Telephone No.
@@ -76,21 +130,17 @@ export default function CheckoutDialog() {
               }}
             />
           </div>
+          {isWrongTelpInput && (
+            <p className="text-red-500 mb-1">
+              Warning: Please ensure the telephone number format is correct.
+            </p>
+          )}
         </div>
         <DialogFooter>
           <DialogClose asChild>
             <Button variant="outline">Cancel</Button>
           </DialogClose>
-          <Button
-            onClick={() =>
-              isCheckoutSuccess
-                ? (removeAllItems(),
-                  console.log(buyerName, buyerEmail, buyerTelp))
-                : null
-            }
-          >
-            Proceed to Payment
-          </Button>
+          <Button onClick={handleCheckoutClick}>Proceed to Payment</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
