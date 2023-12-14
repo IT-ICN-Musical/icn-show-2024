@@ -16,7 +16,7 @@ const Page: React.FC = () => {
       <div className="mb-14">
         <Navbar attribute="shop" />
 
-        <div className="container mx-auto mb-7">
+        <div className="container mx-auto mb-7 mt-44">
           <div className="mt-10 font-bold text-4xl mb-6 text-center md:text-left px-10 xl:px-0">
             Products
           </div>

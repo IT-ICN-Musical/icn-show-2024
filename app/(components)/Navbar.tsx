@@ -17,7 +17,7 @@ export default function Navbar(props: Props) {
     setShoppinggCartQuantity(cartQuantity);
   }, [cartQuantity]);
   return (
-    <div className="w-full z-50 pt-10">
+    <div className="fixed w-full z-50 pt-10">
       <div
         className={`flex w-4/5 mx-auto shadow-sm px-16 py-4 rounded-full justify-between items-center ${
           props.attribute === "transparent"
