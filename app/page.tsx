@@ -1,24 +1,30 @@
 "use client";
 
-import Navbar from "./(components)/Navbar";
-import Tickets from "./(components)/Tickets";
-import React, { useEffect } from "react";
-import Synopsis from "./(components)/Synopsis";
-import Loading from "./(components)/loading";
-import Footer from "./(components)/Footer";
+import Synopsis from "./components/Synopsis";
+import { useEffect, useState } from "react";
+import LandingPage from "./components/LandingPage";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrollable, setScrollable] = useState<boolean>(false);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (scrollable) {
+      document.body.style.overflow = "overlay";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [scrollable]);
 
   return (
-    <main>
-      <Loading interval={1500} />
-      <Navbar />
-      <Tickets />
+    <>
+      <LandingPage
+        openWindow={isOpen}
+        scrollable={scrollable}
+        setOpenWindow={setIsOpen}
+        setScrollable={setScrollable}
+      />
       <Synopsis />
-      <Footer />
-    </main>
+    </>
   );
 }

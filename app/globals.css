@@ -83,3 +83,32 @@
         scrollbar-width: none;  
     }
 }
+.windowContainer {
+  container-name: windowContainer;
+  container-type: normal;
+  width: 38%;
+  height: 78%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@container (width > 10px) {
+  .windowContent {
+    height: auto;
+    width: 100%;
+  }
+
+  .windowContent > div {
+    background-color: #fbacaa;
+  }
+}
+
+.windowContent {
+  height: 100%;
+  width: auto;
+}
+
+.windowContent > div {
+  background-color: #ff0000;
+}

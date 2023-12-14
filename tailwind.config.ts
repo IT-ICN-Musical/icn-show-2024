@@ -14,6 +14,7 @@ const config: Config = {
       },
       fontFamily: {
         gyahegi: ["var(--font-gyahegi)", "serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
       backgroundImage: {
         'navbar-gradient':'linear-gradient(90deg,rgba(255,255,255,0.60) 0%,rgba(255,255,255,0.15) 101.64%)',
