@@ -1,16 +1,29 @@
 "use client";
-import Image from "next/image";
+
 import Synopsis from "./components/Synopsis";
-import Window from "./components/Window";
-import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LandingPage from "./components/LandingPage";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrollable, setScrollable] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (scrollable) {
+      document.body.style.overflow = "overlay";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [scrollable]);
+
   return (
     <>
-      <LandingPage openWindow={isOpen} setOpenWindow={setIsOpen} />
+      <LandingPage
+        openWindow={isOpen}
+        scrollable={scrollable}
+        setOpenWindow={setIsOpen}
+        setScrollable={setScrollable}
+      />
       <Synopsis />
     </>
   );
