@@ -36,10 +36,10 @@ export default function Navbar(props: Props) {
         </div>
         <div className="flex flex-row items-center space-x-[1.5rem]">
           <div className="flex flex-row h-fit">
-            <Button url="home">Home</Button>
+            <Button url="">Home</Button>
             <Button url="cast">Cast</Button>
             <Button url="about-us">About Us</Button>
-            <Button url="home" color="dark" animate="animate">
+            <Button url="store" color="dark" animate="animate">
               Buy Tickets
             </Button>
           </div>

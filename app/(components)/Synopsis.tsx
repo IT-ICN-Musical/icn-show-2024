@@ -10,11 +10,15 @@ export default function Synopsis() {
       <div className="h-screen w-[100%] flex justify-center items-center">
         <div className="w-[40%]">
           <p className="text-center text-[16px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et ex
-            diam. Nulla porttitor arcu nisl, non tincidunt elit gravida vel.
-            Fusce eget mi pharetra, hendrerit diam sit amet, consequat purus.
-            Aliquam tincidunt mollis augue, vel feugiat justo pulvinar sit amet.
-            Integer ante ligula, maximus eu maximus eget, elementum et erat.
+            Galih, fueled by a fervent desire for fame, sets out on a journey to
+            Jakarta, leaving behind the familiarity of home. Alongside his
+            sister Laras' pursuit of acting dreams, their divergent paths unfold
+            against the backdrop of Indonesia's burgeoning music scene in the
+            1970s. As Galih faces harsh realities and shattered illusions in
+            pursuit of stardom, will he discover that true fulfillment lies not
+            in fame but in embracing the present moment? His journey raises a
+            poignant question: Can one reconcile ambition with the simple joy of
+            living?
           </p>
         </div>
       </div>

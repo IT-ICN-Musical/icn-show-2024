@@ -108,7 +108,7 @@ export default function CastSelectionPage() {
   }, []);
 
   return (
-    <>
+    <div className="overflow-y-hidden">
       <button
         onClick={onBack}
         className="absolute top-10 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium"
@@ -217,6 +217,6 @@ export default function CastSelectionPage() {
           <p>{cast[selectedIndex].desc}</p>
         </motion.div>
       </div>
-    </>
+    </div>
   );
 }
