@@ -13,6 +13,7 @@ import {
   useAnimate,
 } from "framer-motion";
 import Navbar from "@/app/(components)/Navbar";
+import { ScrollArea } from "@/app/store/(components)/(utils)/ScrollArea";
 
 const transition: AnimationProps["transition"] = {
   duration: 0.6,
@@ -136,7 +137,7 @@ export default function CastSelectionPage() {
         </div>
         <motion.div
           layout
-          className="z-10 flex grow flex-col justify-end px-20 py-10"
+          className="z-10 flex grow flex-col justify-end px-12 sm:px-16 lg:px-20 py-10"
           transition={transition}
         >
           <motion.h2
@@ -213,11 +214,13 @@ export default function CastSelectionPage() {
           }}
           transition={transition}
           initial={false}
-          className={`px-20 lg:w-1/2 overflow-hidden ${
+          className={`px-12 sm:px-16 lg:px-20 lg:w-1/2 overflow-hidden ${
             carouselShrinked ? "z-20" : "z-10"
           }`}
         >
-          <p>{cast[selectedIndex].desc}</p>
+          <ScrollArea className="h-full">
+            <p className="text-xs sm:text-base">{cast[selectedIndex].desc}</p>
+          </ScrollArea>
         </motion.div>
       </div>
     </main>
