@@ -114,10 +114,13 @@ export default function CastSelectionPage() {
       <Navbar />
       <button
         onClick={onBack}
-        className="lg:hidden absolute top-32 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium"
+        className={`${
+          carouselShrinked ? "lg:hidden" : "hidden"
+        }  absolute top-40 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium`}
       >
         Back
       </button>
+
       <div className="w-screen h-screen flex flex-col relative text-white">
         <div className="embla absolute inset-0" ref={emblaMainRef}>
           <div className="embla__container">
@@ -172,7 +175,10 @@ export default function CastSelectionPage() {
           ref={scope}
           className="z-20 min-h-[33%] grow items-center absolute bottom-0 inset-x-0"
         >
-          <div ref={heightRef} className="relative">
+          <div
+            ref={heightRef}
+            className={`${carouselShrinked ? "hidden lg:block" : ""}`}
+          >
             {/* Workaround to animate the `background` property */}
             <motion.div
               animate={{ opacity: thumbShrinked ? 0 : 100 }}
