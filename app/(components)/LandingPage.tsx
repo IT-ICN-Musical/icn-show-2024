@@ -37,42 +37,42 @@ export default function LandingPage({
       onClick={() => setOpenWindow(true)}
     >
       <Image
-        src="/images/landing-page/landing bg.png"
+        src="/images/landing-page/landing-bg.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/images/landing-page/landing bunga.png"
+        src="/images/landing-page/landing-bunga.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/images/landing-page/landing cloud.png"
+        src="/images/landing-page/landing-cloud.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/images/landing-page/landing percik kecil.png"
+        src="/images/landing-page/landing-percik-kecil.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/images/landing-page/landing smoke.png"
+        src="/images/landing-page/landing-smoke.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/images/landing-page/landing star.png"
+        src="/images/landing-page/landing-star.png"
         className="animate-pulse object-cover"
         alt="background"
         fill={true}
