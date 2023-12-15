@@ -117,7 +117,7 @@ export default function CastPage() {
                     {image.text}
 
                     {image.isCastDetailAvailable && (
-                      <div className="text-xs pt-2">
+                      <div className="text-xs font-serif pt-4">
                         Double Click to See More
                       </div>
                     )}
