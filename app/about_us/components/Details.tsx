@@ -9,7 +9,7 @@ export default function page(props: DetailsProps) {
   return (
     <main className="bg-[#FBF8F3] overflow-hidden">
       <div className="w-[100%] h-screen overflow-auto">
-        <div className="flex w-[100%] justify-center items-center mt-[8%] space-x-[5%]">
+        <div className="flex w-[100%] sm:flex-row flex-col justify-center items-center mt-[8%] space-x-[5%]">
           <Image
             className="flex object-cover"
             src={`/${props.name}.svg`}
