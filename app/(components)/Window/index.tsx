@@ -25,7 +25,7 @@ function Window({ children, className, ...rest }: WindowPropType) {
         </div>
 
         <Image
-          src="/assets/landing-page/landing frame.png"
+          src="/images/landing-page/landing frame.png"
           alt="test"
           className="object-contain scale-[1.4] md:scale-100"
           fill

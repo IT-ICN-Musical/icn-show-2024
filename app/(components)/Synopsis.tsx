@@ -3,23 +3,26 @@ import Image from "next/image";
 import Supported_by from "./Supported_by";
 import { FlyInLeft } from "./FlyInLeft";
 import { FlyInRight } from "./FlyinRight";
+import { FadeUp } from "./FadeUp";
 
 export default function Synopsis() {
   return (
     <main className="bg-[#FBF8F3]">
       <div className="h-screen w-[100%] flex justify-center items-center">
         <div className="lg:w-[40%] w-2/3">
-          <p className="text-center text-lg">
-            Galih, fueled by a fervent desire for fame, sets out on a journey to
-            Jakarta, leaving behind the familiarity of home. Alongside his
-            sister Laras' pursuit of acting dreams, their divergent paths unfold
-            against the backdrop of Indonesia's burgeoning music scene in the
-            1970s. As Galih faces harsh realities and shattered illusions in
-            pursuit of stardom, will he discover that true fulfillment lies not
-            in fame but in embracing the present moment? His journey raises a
-            poignant question: Can one reconcile ambition with the simple joy of
-            living?
-          </p>
+          <FadeUp x={0} duration={0.4}>
+            <p className="text-center text-lg">
+              Galih, fueled by a fervent desire for fame, sets out on a journey
+              to Jakarta, leaving behind the familiarity of home. Alongside his
+              sister Laras' pursuit of acting dreams, their divergent paths
+              unfold against the backdrop of Indonesia's burgeoning music scene
+              in the 1970s. As Galih faces harsh realities and shattered
+              illusions in pursuit of stardom, will he discover that true
+              fulfillment lies not in fame but in embracing the present moment?
+              His journey raises a poignant question: Can one reconcile ambition
+              with the simple joy of living?
+            </p>
+          </FadeUp>
         </div>
       </div>
 

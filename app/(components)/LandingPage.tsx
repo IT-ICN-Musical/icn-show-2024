@@ -37,42 +37,42 @@ export default function LandingPage({
       onClick={() => setOpenWindow(true)}
     >
       <Image
-        src="/assets/landing-page/landing bg.png"
+        src="/images/landing-page/landing bg.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/assets/landing-page/landing bunga.png"
+        src="/images/landing-page/landing bunga.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/assets/landing-page/landing cloud.png"
+        src="/images/landing-page/landing cloud.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/assets/landing-page/landing percik kecil.png"
+        src="/images/landing-page/landing percik kecil.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/assets/landing-page/landing smoke.png"
+        src="/images/landing-page/landing smoke.png"
         className="object-cover"
         alt="background"
         fill={true}
         layout="fill"
       />
       <Image
-        src="/assets/landing-page/landing star.png"
+        src="/images/landing-page/landing star.png"
         className="animate-pulse object-cover"
         alt="background"
         fill={true}
@@ -84,7 +84,7 @@ export default function LandingPage({
           openWindow && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold text-white">
+        <h2 className="text-lg md:text-2xl font-bold text-[#9b5773]">
           Click to Continue
         </h2>
       </div>
@@ -94,28 +94,28 @@ export default function LandingPage({
           !scrollable && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold text-white">
+        <h2 className="text-lg md:text-2xl font-bold text-[#9b5773]">
           Scroll Down
         </h2>
       </div>
       <Window>
         <div className="bg-white w-screen h-screen">
           <Image
-            src="/assets/landing-page/landing bg jendelalangit.png"
+            src="/images/landing-page/landing bg jendelalangit.png"
             alt="jendelalangit"
             fill={true}
             unoptimized
             className="scale-[1.4] translate-x-[1%] translate-y-[4%] object-cover"
           />
           <Image
-            src="/assets/landing-page/gedung.png"
+            src="/images/landing-page/gedung.png"
             alt="gedung"
             fill={true}
             unoptimized
             className="scale-[1.35] translate-y-[6%] object-cover"
           />
           <Image
-            src="/assets/landing-page/kaharsa-logo.png"
+            src="/images/landing-page/kaharsa-logo.png"
             alt="kaharsa-logo"
             width={0}
             height={0}
@@ -129,7 +129,7 @@ export default function LandingPage({
             )}
           />
           <Image
-            src="/assets/landing-page/gorden kiri.png"
+            src="/images/landing-page/gorden kiri.png"
             alt="gordenkiri"
             fill={true}
             unoptimized
@@ -139,7 +139,7 @@ export default function LandingPage({
             )}
           />
           <Image
-            src="/assets/landing-page/gorden kanan.png"
+            src="/images/landing-page/gorden kanan.png"
             alt="gordenkanan"
             fill={true}
             unoptimized
