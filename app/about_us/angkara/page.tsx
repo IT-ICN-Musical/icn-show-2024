@@ -1,23 +1,28 @@
-import React from 'react';
-import Details from '../components/Details';
+import React from "react";
+import Details from "../components/Details";
 
-const text: React.ReactNode =
-(
-    <p className='text-md'>
-        Pariatur ut nostrud mollit qui ad amet deserunt irure elit. Exercitation aliquip id veniam quis id proident officia culpa ea sit esse ad. 
-        Ex do esse elit voluptate sit excepteur aliqua tempor veniam amet velit magna ea laborum. Ea consectetur nulla deserunt laboris laboris elit 
-        ea Lorem exercitation cupidatat eiusmod reprehenderit magna.
-        <br/><br/>
-        Elit qui qui qui do occaecat veniam ad nulla dolore culpa reprehenderit elit laboris Lorem. Anim nulla qui pariatur nulla esse. 
-        Dolore amet et cillum commodo ut. Sunt culpa sint sunt anim esse ullamco dolore ad esse sint qui velit occaecat nulla.
-        <br/><br/>
-        Minim Lorem nisi dolor non laborum voluptate ut aute magna mollit ad ullamco ex. Magna qui aute est mollit officia est consequat cupidatat 
-        cupidatat irure culpa ipsum et. Aliqua Lorem Lorem amet veniam irure veniam amet anim excepteur ad ullamco.
-    </p>
-)
+const text: React.ReactNode = (
+  <p className="text-md">
+    Angkara centers on the life of Ken Arok, a young thug determined to be more
+    than just a feather in the air. Under the tutelage of an ascetic named
+    Lohgawe, Arok pursues his dream to become the reformer of his society and
+    his love of a lifetime, Ken Dedes, the beautiful wife of his superior, local
+    chieftain Tunggul Ametung. His thirst for power involves those around him,
+    including an esteemed keris bladesmith, Mpu Gandring, his best friend and
+    fellow guard, Kebo Ijo, and Kebo Ijo's wife, Sasmi.
+    <br />
+    <br />
+    Unfortunately, as Arok rises to become a great leader for his people, he
+    sows the seeds of hatred and vengeance among those closest to him,
+    particularly his crown prince Anusapati, who is always in the company of a
+    palace maid, Mahisa Dewi, and a former advisor, Ki Pengalasan.
+    <br />
+    <br />
+    The musical chronicles Arok's triumphs and regrets in his journey to
+    ultimately discover what is truly important in his life.
+  </p>
+);
 
 export default function page() {
-  return (
-    <Details name="angkara" text={text} />
-  );
+  return <Details name="angkara" text={text} />;
 }
