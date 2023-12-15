@@ -8,8 +8,8 @@ export default function Synopsis() {
   return (
     <main className="bg-[#FBF8F3]">
       <div className="h-screen w-[100%] flex justify-center items-center">
-        <div className="w-[40%]">
-          <p className="text-center text-[16px]">
+        <div className="lg:w-[40%] w-2/3">
+          <p className="text-center text-lg">
             Galih, fueled by a fervent desire for fame, sets out on a journey to
             Jakarta, leaving behind the familiarity of home. Alongside his
             sister Laras' pursuit of acting dreams, their divergent paths unfold
@@ -24,17 +24,17 @@ export default function Synopsis() {
       </div>
 
       <div className="h-screen w-[100%] flex justify-center items-center px-[5%]">
-        <div className="flex justify-center items-center space-x-[6%]">
+        <div className="flex justify-center flex-col lg:flex-row items-center space-x-[6%]">
           <FlyInLeft>
             <div className="flex w-[100%] h-full">
               <Image src="/web1.svg" alt="image 1" width={761} height={535} />
             </div>
           </FlyInLeft>
 
-          <div className="flex w-[30%] justify-center items-center">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInRight>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   In the beginning...
                 </p>
                 <p className="mt-5 text-lg text-center">
@@ -48,12 +48,12 @@ export default function Synopsis() {
         </div>
       </div>
 
-      <div className="h-screen w-[100%] flex justify-center items-center pl-[10%]">
-        <div className="flex justify-center items-center space-x-[6%]">
-          <div className="flex w-[30%] justify-center items-center">
+      <div className="h-screen w-[100%] flex justify-center items-center lg:pl-[10%] px-[5%]">
+        <div className="flex justify-center flex-col-reverse lg:flex-row items-center space-x-[6%]">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInLeft>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   As the journey continues...
                 </p>
                 <p className="mt-5 text-lg text-center">
@@ -77,17 +77,17 @@ export default function Synopsis() {
       </div>
 
       <div className="h-screen w-[100%] flex justify-center items-center px-[5%]">
-        <div className="flex justify-center items-center space-x-[6%]">
+        <div className="flex justify-center flex-col lg:flex-row items-center space-x-[6%]">
           <FlyInLeft>
             <div className="flex w-[100%] h-full">
               <Image src="/web3.svg" alt="image 3" width={760} height={482} />
             </div>
           </FlyInLeft>
 
-          <div className="flex w-[30%] justify-center items-center">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInRight>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   Finally...
                 </p>
                 <p className="mt-5 text-lg text-center">

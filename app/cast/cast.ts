@@ -5,6 +5,7 @@ import actorCImg from "../../public/images/cast/Actor C.png";
 import actorDImg from "../../public/images/cast/Actor D.png";
 import actorEImg from "../../public/images/cast/Actor E.png";
 import actorFImg from "../../public/images/cast/Actor F.png";
+import actorGImg from "../../public/images/cast/Actor G.png";
 
 export type Cast = {
   name: string;
@@ -62,6 +63,14 @@ export const cast: Cast[] = [
     image: {
       src: actorFImg,
       alt: "Picture of Actor F",
+    },
+  },
+  {
+    name: "Actor G",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At quis risus sed vulputate odio ut enim. Tellus elementum sagittis vitae et leo. Proin libero nunc consequat interdum varius. Interdum varius sit amet mattis vulputate enim nulla. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Consequat nisl vel pretium lectus quam id. Donec ultrices tincidunt arcu non sodales. Cras sed felis eget velit aliquet sagittis id consectetur. ",
+    image: {
+      src: actorGImg,
+      alt: "Picture of Actor G",
     },
   },
 ];

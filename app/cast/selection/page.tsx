@@ -12,6 +12,7 @@ import {
   motion,
   useAnimate,
 } from "framer-motion";
+import Navbar from "@/app/(components)/Navbar";
 
 const transition: AnimationProps["transition"] = {
   duration: 0.6,
@@ -108,10 +109,11 @@ export default function CastSelectionPage() {
   }, []);
 
   return (
-    <div className="overflow-y-hidden">
+    <main className="overflow-hidden">
+      <Navbar />
       <button
         onClick={onBack}
-        className="absolute top-10 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium"
+        className="lg:hidden absolute top-32 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium"
       >
         Back
       </button>
@@ -167,7 +169,7 @@ export default function CastSelectionPage() {
         </motion.div>
         <div
           ref={scope}
-          className="z-20 min-h-[33%] flex grow items-center absolute bottom-0 inset-x-0"
+          className="z-20 min-h-[33%] grow items-center absolute bottom-0 inset-x-0"
         >
           <div ref={heightRef} className="relative">
             {/* Workaround to animate the `background` property */}
@@ -211,12 +213,13 @@ export default function CastSelectionPage() {
           }}
           transition={transition}
           initial={false}
-          className="px-20 w-1/2 overflow-hidden"
-          style={{ zIndex: carouselShrinked ? 20 : 10 }}
+          className={`px-20 lg:w-1/2 overflow-hidden ${
+            carouselShrinked ? "z-20" : "z-10"
+          }`}
         >
           <p>{cast[selectedIndex].desc}</p>
         </motion.div>
       </div>
-    </div>
+    </main>
   );
 }

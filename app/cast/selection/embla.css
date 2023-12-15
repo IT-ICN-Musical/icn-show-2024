@@ -27,8 +27,12 @@
 }
 
 @keyframes shrink {
-  from { width: 200px; }
-  to { width: 150px; }
+  from {
+    width: 200px;
+  }
+  to {
+    width: 150px;
+  }
 }
 
 .unshrink {
@@ -38,6 +42,10 @@
 }
 
 @keyframes unshrink {
-  from { width: 150px; }
-  to { width: 200px;}
+  from {
+    width: 150px;
+  }
+  to {
+    width: 200px;
+  }
 }

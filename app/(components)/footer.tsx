@@ -10,10 +10,9 @@ export default function Footer() {
   return (
     <div className="relative">
       <Image
-        className="w-screen h-24 bg-gray-900 opacity-50e"
+        className="w-screen h-24 bg-gray-900 opacity-50e object-cover"
         src={bgImgBatik}
         alt="Batik Minang"
-        objectFit="cover"
       />
       <div className="flex absolute inset-0 items-center justify-between px-48">
         <Image src={icnLogo} alt="ICN logo" />

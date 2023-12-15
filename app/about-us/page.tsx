@@ -6,9 +6,9 @@ import Tickets from "../(components)/Tickets";
 
 export default function aboutUsPage() {
   return (
-    <div>
+    <main className="overflow-x-hidden">
       <AboutUsLogoDescription />
       <Tickets />
-    </div>
+    </main>
   );
 }
