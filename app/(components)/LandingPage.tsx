@@ -26,9 +26,14 @@ export default function LandingPage({
       });
     }
   }, [logoRef.current]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div
-      className="h-screen w-full bg-slate-500"
+      className="h-screen w-full bg-slate-500 relative"
       onClick={() => setOpenWindow(true)}
     >
       <Image
@@ -80,7 +85,9 @@ export default function LandingPage({
           openWindow && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold">Click to Continue</h2>
+        <h2 className="text-lg md:text-2xl font-bold text-[#E8C67A]">
+          Click to Continue
+        </h2>
       </div>
       <div
         className={clsx(
@@ -88,13 +95,15 @@ export default function LandingPage({
           !scrollable && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold">Scroll Down</h2>
+        <h2 className="text-lg md:text-2xl font-bold text-[#E8C67A]">
+          Scroll Down
+        </h2>
       </div>
       <Window>
         <div className="bg-white w-screen h-screen">
           <Image
             src="/assets/landing-page/landing bg jendelalangit.png"
-            alt="test"
+            alt="jendelalangit"
             fill={true}
             unoptimized
             objectFit="cover"
@@ -102,30 +111,30 @@ export default function LandingPage({
           />
           <Image
             src="/assets/landing-page/gedung.png"
-            alt="test"
+            alt="gedung"
             fill={true}
             unoptimized
             objectFit="cover"
-            className="scale-[1.35] translate-y-[3%]"
+            className="scale-[1.35] translate-y-[6%]"
           />
           <Image
-            src="/assets/landing-page/icn-logo.png"
-            alt="test"
+            src="/assets/landing-page/kaharsa-logo.png"
+            alt="kaharsa-logo"
             width={0}
             height={0}
             unoptimized
             ref={logoRef}
             objectFit="cover"
             className={clsx(
-              "absolute left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 w-3/6 duration-1000  ease-in-out transition-[transform_opacity]",
+              "absolute left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 w-max max-w-none duration-1000  ease-in-out transition-[transform_opacity]",
               openWindow
-                ? "scale-100 opacity-100 delay-[1500ms]"
+                ? "scale-[70%] opacity-100 delay-[1500ms]"
                 : "scale-50 opacity-0"
             )}
           />
           <Image
             src="/assets/landing-page/gorden kiri.png"
-            alt="test"
+            alt="gordenkiri"
             fill={true}
             unoptimized
             objectFit="cover"
@@ -136,7 +145,7 @@ export default function LandingPage({
           />
           <Image
             src="/assets/landing-page/gorden kanan.png"
-            alt="test"
+            alt="gordenkanan"
             fill={true}
             unoptimized
             objectFit="cover"

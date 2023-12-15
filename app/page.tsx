@@ -1,8 +1,8 @@
 "use client";
 
-import Synopsis from "./components/Synopsis";
 import { useEffect, useState } from "react";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./(components)/LandingPage";
+import LandingPageContent from "./(components)/LandingPageContent";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,14 +17,14 @@ export default function Home() {
   }, [scrollable]);
 
   return (
-    <>
+    <main className="overflow-y-hidden">
       <LandingPage
         openWindow={isOpen}
         scrollable={scrollable}
         setOpenWindow={setIsOpen}
         setScrollable={setScrollable}
       />
-      <Synopsis />
-    </>
+      <LandingPageContent />
+    </main>
   );
 }
