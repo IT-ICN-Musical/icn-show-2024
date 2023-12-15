@@ -1,23 +1,30 @@
-import React from 'react';
-import Details from '../components/Details';
+import React from "react";
+import Details from "../components/Details";
 
-const text: React.ReactNode =
-(
-    <p className='text-md'>
-        Pariatur ut nostrud mollit qui ad amet deserunt irure elit. Exercitation aliquip id veniam quis id proident officia culpa ea sit esse ad. 
-        Ex do esse elit voluptate sit excepteur aliqua tempor veniam amet velit magna ea laborum. Ea consectetur nulla deserunt laboris laboris elit 
-        ea Lorem exercitation cupidatat eiusmod reprehenderit magna.
-        <br/><br/>
-        Elit qui qui qui do occaecat veniam ad nulla dolore culpa reprehenderit elit laboris Lorem. Anim nulla qui pariatur nulla esse. 
-        Dolore amet et cillum commodo ut. Sunt culpa sint sunt anim esse ullamco dolore ad esse sint qui velit occaecat nulla.
-        <br/><br/>
-        Minim Lorem nisi dolor non laborum voluptate ut aute magna mollit ad ullamco ex. Magna qui aute est mollit officia est consequat cupidatat 
-        cupidatat irure culpa ipsum et. Aliqua Lorem Lorem amet veniam irure veniam amet anim excepteur ad ullamco.
-    </p>
-)
+const text: React.ReactNode = (
+  <p className="text-md">
+    The island of Bali is known as the “Island of the Gods” because of its
+    beautiful nature and strong religious traditions. However, only few know the
+    truth behind that name and the kingdom from whence the name originated.
+    Hundreds of years ago, a grave disaster struck the island and crippled the
+    entire realm of Wanekeling Kalianget. So devastating was the calamity that
+    the king himself fell into a state of despair. It was as if the gods had
+    left the people of Bali to fend for themselves.
+    <br />
+    <br />
+    However, out of the ruins of the westernmost village of the island, rose a
+    young man who refused to surrender to the vast hopelessness. His decision
+    led to an eventful encounter with a woman after his own heart and a
+    kingsguard that would change his fate—and ultimately the entire
+    island—forever. Would the young man eventually succeed in restoring the hope
+    that was lost in the catastrophe? What kind of end would befall the kingdom?
+    And would the gods finally turn their gaze upon Bali once more?
+    <br />
+    <br />
+    This is the story of mankind in a paradise abandoned by the gods.
+  </p>
+);
 
 export default function page() {
-  return (
-    <Details name="nirwata" text={text} />
-  );
+  return <Details name="nirwata" text={text} />;
 }

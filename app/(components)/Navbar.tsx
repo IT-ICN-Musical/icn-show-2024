@@ -6,8 +6,11 @@ import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import ShoppingCart from "../store/(components)/ShoppingCart";
 import { useShoppingCart } from "../store/(context)/ShoppingCartContext";
+import DropdownMenu from "./DropdownMenu";
+
 type Props = {
-  attribute?: "transparent" | "shop";
+  attribute?: "shop" | "home";
+  scrollable?: boolean;
 };
 
 export default function Navbar(props: Props) {
@@ -17,12 +20,14 @@ export default function Navbar(props: Props) {
     setShoppinggCartQuantity(cartQuantity);
   }, [cartQuantity]);
   return (
-    <div className="w-full z-50 pt-10">
+    <div className="fixed w-full z-50 pt-10">
       <div
-        className={`flex w-4/5 mx-auto shadow-sm px-16 py-4 rounded-full justify-between items-center ${
-          props.attribute === "transparent"
-            ? "backdrop-blur-[15px] bg-navbar-gradient border-1 border-white border-[1px]"
-            : "bg-white"
+        className={`flex w-3/4 mx-auto lg:shadow-sm px-8 sm:px-16 py-4 rounded-full justify-between items-center bg-white transition-opacity ease-in-out duration-1000 ${
+          props.attribute === "home"
+            ? props.scrollable
+              ? "opacity-100"
+              : "opacity-0"
+            : "opacity-100"
         }`}
       >
         <div className="p">
@@ -35,19 +40,25 @@ export default function Navbar(props: Props) {
           />
         </div>
         <div className="flex flex-row items-center space-x-[1.5rem]">
-          <div className="flex flex-row h-fit">
-            <Button url="home">Home</Button>
-            <Button url="cast">Cast</Button>
-            <Button url="about-us">About Us</Button>
-            <Button url="home" color="dark" animate="animate">
-              Buy Tickets
-            </Button>
+          <div className="lg:block hidden">
+            <div className="flex flex-row h-fit">
+              <Button url="">Home</Button>
+              <Button url="cast">Cast</Button>
+              <Button url="about_us">About Us</Button>
+              <Button url="store" color="dark" animate="animate">
+                Buy Tickets
+              </Button>
+            </div>
           </div>
+
           {shoppingCartQuantity > 0 && props.attribute === "shop" && (
-            <div>
+            <div className="lg:block hidden">
               <ShoppingCart />
             </div>
           )}
+        </div>
+        <div className="lg:hidden">
+          <DropdownMenu {...props} />
         </div>
       </div>
     </div>

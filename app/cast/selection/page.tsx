@@ -12,6 +12,8 @@ import {
   motion,
   useAnimate,
 } from "framer-motion";
+import Navbar from "@/app/(components)/Navbar";
+import { ScrollArea } from "@/app/store/(components)/(utils)/ScrollArea";
 
 const transition: AnimationProps["transition"] = {
   duration: 0.6,
@@ -108,13 +110,17 @@ export default function CastSelectionPage() {
   }, []);
 
   return (
-    <>
+    <main className="overflow-hidden">
+      <Navbar />
       <button
         onClick={onBack}
-        className="absolute top-10 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium"
+        className={`${
+          carouselShrinked ? "lg:hidden" : "hidden"
+        }  absolute top-40 left-10 z-50 bg-slate-200 w-auto px-5 py-3 rounded-full shadow-lg font-medium`}
       >
         Back
       </button>
+
       <div className="w-screen h-screen flex flex-col relative text-white">
         <div className="embla absolute inset-0" ref={emblaMainRef}>
           <div className="embla__container">
@@ -134,7 +140,7 @@ export default function CastSelectionPage() {
         </div>
         <motion.div
           layout
-          className="z-10 flex grow flex-col justify-end px-20 py-10"
+          className="z-10 flex grow flex-col justify-end px-12 sm:px-16 lg:px-20 py-10"
           transition={transition}
         >
           <motion.h2
@@ -167,9 +173,12 @@ export default function CastSelectionPage() {
         </motion.div>
         <div
           ref={scope}
-          className="z-20 min-h-[33%] flex grow items-center absolute bottom-0 inset-x-0"
+          className="z-20 min-h-[33%] grow items-center absolute bottom-0 inset-x-0"
         >
-          <div ref={heightRef} className="relative">
+          <div
+            ref={heightRef}
+            className={`${carouselShrinked ? "hidden lg:block" : ""}`}
+          >
             {/* Workaround to animate the `background` property */}
             <motion.div
               animate={{ opacity: thumbShrinked ? 0 : 100 }}
@@ -211,12 +220,15 @@ export default function CastSelectionPage() {
           }}
           transition={transition}
           initial={false}
-          className="px-20 w-1/2 overflow-hidden"
-          style={{ zIndex: carouselShrinked ? 20 : 10 }}
+          className={`px-12 sm:px-16 lg:px-20 lg:w-1/2 overflow-hidden ${
+            carouselShrinked ? "z-20" : "z-10"
+          }`}
         >
-          <p>{cast[selectedIndex].desc}</p>
+          <ScrollArea className="h-full">
+            <p className="text-xs sm:text-base">{cast[selectedIndex].desc}</p>
+          </ScrollArea>
         </motion.div>
       </div>
-    </>
+    </main>
   );
 }

@@ -3,34 +3,41 @@ import Image from "next/image";
 import Supported_by from "./Supported_by";
 import { FlyInLeft } from "./FlyInLeft";
 import { FlyInRight } from "./FlyinRight";
+import { FadeUp } from "./FadeUp";
 
 export default function Synopsis() {
   return (
     <main className="bg-[#FBF8F3]">
       <div className="h-screen w-[100%] flex justify-center items-center">
-        <div className="w-[40%]">
-          <p className="text-center text-[16px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et ex
-            diam. Nulla porttitor arcu nisl, non tincidunt elit gravida vel.
-            Fusce eget mi pharetra, hendrerit diam sit amet, consequat purus.
-            Aliquam tincidunt mollis augue, vel feugiat justo pulvinar sit amet.
-            Integer ante ligula, maximus eu maximus eget, elementum et erat.
-          </p>
+        <div className="lg:w-[40%] w-2/3">
+          <FadeUp x={0} duration={0.4}>
+            <p className="text-center text-lg">
+              Galih, fueled by a fervent desire for fame, sets out on a journey
+              to Jakarta, leaving behind the familiarity of home. Alongside his
+              sister Laras' pursuit of acting dreams, their divergent paths
+              unfold against the backdrop of Indonesia's burgeoning music scene
+              in the 1970s. As Galih faces harsh realities and shattered
+              illusions in pursuit of stardom, will he discover that true
+              fulfillment lies not in fame but in embracing the present moment?
+              His journey raises a poignant question: Can one reconcile ambition
+              with the simple joy of living?
+            </p>
+          </FadeUp>
         </div>
       </div>
 
       <div className="h-screen w-[100%] flex justify-center items-center px-[5%]">
-        <div className="flex justify-center items-center space-x-[6%]">
+        <div className="flex justify-center flex-col lg:flex-row items-center space-x-[6%]">
           <FlyInLeft>
             <div className="flex w-[100%] h-full">
               <Image src="/web1.svg" alt="image 1" width={761} height={535} />
             </div>
           </FlyInLeft>
 
-          <div className="flex w-[30%] justify-center items-center">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInRight>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   In the beginning...
                 </p>
                 <p className="mt-5 text-lg text-center">
@@ -44,12 +51,12 @@ export default function Synopsis() {
         </div>
       </div>
 
-      <div className="h-screen w-[100%] flex justify-center items-center pl-[10%]">
-        <div className="flex justify-center items-center space-x-[6%]">
-          <div className="flex w-[30%] justify-center items-center">
+      <div className="h-screen w-[100%] flex justify-center items-center lg:pl-[10%] px-[5%]">
+        <div className="flex justify-center flex-col-reverse lg:flex-row items-center space-x-[6%]">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInLeft>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   As the journey continues...
                 </p>
                 <p className="mt-5 text-lg text-center">
@@ -73,17 +80,17 @@ export default function Synopsis() {
       </div>
 
       <div className="h-screen w-[100%] flex justify-center items-center px-[5%]">
-        <div className="flex justify-center items-center space-x-[6%]">
+        <div className="flex justify-center flex-col lg:flex-row items-center space-x-[6%]">
           <FlyInLeft>
             <div className="flex w-[100%] h-full">
               <Image src="/web3.svg" alt="image 3" width={760} height={482} />
             </div>
           </FlyInLeft>
 
-          <div className="flex w-[30%] justify-center items-center">
+          <div className="flex lg:w-[30%] w-2/3 justify-center items-center">
             <FlyInRight>
-              <div>
-                <p className="font-gyahegi text-header text-xl text-center">
+              <div className="pt-12 lg:pt-0">
+                <p className="font-gyahegi text-header text-2xl text-center text-[#E8C67A]">
                   Finally...
                 </p>
                 <p className="mt-5 text-lg text-center">
@@ -99,7 +106,16 @@ export default function Synopsis() {
         </div>
       </div>
 
-      <div className="w-[100%] h-screen flex justify-center items-center">
+      {/* <div className="w-[100%] h-screen flex justify-center items-center mt-10 sm:mt-0">
+        <div className="w-[850px] flex flex-col space-y-[40px] overflow-y-auto">
+          <p className="font-gyahegi text-body text-[32px] text-center">
+            Supported By
+          </p>
+          <Supported_by />
+        </div>
+      </div> */}
+
+      <div className="w-[100%] h-fit sm:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
         <div className="w-[850px] flex flex-col space-y-[40px]">
           <p className="font-gyahegi text-body text-[32px] text-center">
             Supported By

@@ -17,7 +17,7 @@ function Window({ children, className, ...rest }: WindowPropType) {
             "m-auto top-0 bottom-0 left-0 right-0"
           )}
         >
-          <div className="absolute top-2/4 left-2/4 -translate-x-[49.5%] -translate-y-[54.2%] w-[37%] h-[70%]">
+          <div className="absolute top-2/4 left-2/4 -translate-x-[49.5%] -translate-y-[54.2%] w-[55%] h-[100%] md:w-[37%] md:h-[70%]">
             <div className="relative w-full h-full overflow-hidden">
               {children}
             </div>
@@ -25,10 +25,10 @@ function Window({ children, className, ...rest }: WindowPropType) {
         </div>
 
         <Image
-          src="/assets/landing-page/landing frame.png"
+          src="/images/landing-page/landing frame.png"
           alt="test"
-          layout="fill"
-          objectFit="contain"
+          className="object-contain scale-[1.4] md:scale-100"
+          fill
         />
       </div>
     </div>

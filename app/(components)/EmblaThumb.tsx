@@ -14,7 +14,6 @@ type PropType = {
 };
 
 export default function EmblaThumb({
-  index,
   selected,
   shrinked,
   img,

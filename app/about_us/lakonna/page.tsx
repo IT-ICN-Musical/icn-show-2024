@@ -1,23 +1,34 @@
-import React from 'react';
-import Details from '../components/Details';
+import React from "react";
+import Details from "../components/Details";
 
-const text: React.ReactNode =
-(
-    <p className='text-md'>
-        Pariatur ut nostrud mollit qui ad amet deserunt irure elit. Exercitation aliquip id veniam quis id proident officia culpa ea sit esse ad. 
-        Ex do esse elit voluptate sit excepteur aliqua tempor veniam amet velit magna ea laborum. Ea consectetur nulla deserunt laboris laboris elit 
-        ea Lorem exercitation cupidatat eiusmod reprehenderit magna.
-        <br/><br/>
-        Elit qui qui qui do occaecat veniam ad nulla dolore culpa reprehenderit elit laboris Lorem. Anim nulla qui pariatur nulla esse. 
-        Dolore amet et cillum commodo ut. Sunt culpa sint sunt anim esse ullamco dolore ad esse sint qui velit occaecat nulla.
-        <br/><br/>
-        Minim Lorem nisi dolor non laborum voluptate ut aute magna mollit ad ullamco ex. Magna qui aute est mollit officia est consequat cupidatat 
-        cupidatat irure culpa ipsum et. Aliqua Lorem Lorem amet veniam irure veniam amet anim excepteur ad ullamco.
-    </p>
-)
+const text: React.ReactNode = (
+  <p className="text-md">
+    Inspired by a renowned Torajan folktale ‘Batingna Lebonna’, Lakonna is a
+    story about choices. It is a tale of pursuit; a hunt for glory; a search for
+    happiness.
+    <br />
+    <br />
+    Centuries ago, among the mountains that ornamented Tana Toraja, stood a
+    village under the ruling of its wise leader. The leader had two sons whom he
+    loved dearly. The firstborn, Arrang, was a charming man admired by not only
+    the villagers, but also by Malitta, his long-time friend. Witnessing
+    Arrang’s success, the younger son of the two, Bayo, felt unloved by the
+    people who often compared him to his older brother. Despite his
+    insecurities, he had Tinuwu, his childhood friend who always tried to cheer
+    him up.
+    <br />
+    <br />
+    As time went by, the village leader grew old and his body weakened. As a
+    result, Arrang was chosen to take his father’s place in leading the village.
+    His life soared to even greater heights when he met the love of his life,
+    Tanoana. Their devoted love for each other was so great that they made a vow
+    to always be together in life and in death. It seemed as if Arrang’s life
+    couldn’t be any more perfect. However, with jealousy looming in the shadows,
+    an ill-fated choice would change the course of his life, and of the people
+    around him, forever.
+  </p>
+);
 
 export default function page() {
-  return (
-    <Details name="lakonna" text={text} />
-  );
+  return <Details name="lakonna" text={text} />;
 }

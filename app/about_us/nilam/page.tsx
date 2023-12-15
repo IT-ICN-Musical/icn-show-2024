@@ -1,23 +1,27 @@
-import React from 'react';
-import Details from '../components/Details';
+import React from "react";
+import Details from "../components/Details";
 
-const text: React.ReactNode =
-(
-    <p className='text-md'>
-        Pariatur ut nostrud mollit qui ad amet deserunt irure elit. Exercitation aliquip id veniam quis id proident officia culpa ea sit esse ad. 
-        Ex do esse elit voluptate sit excepteur aliqua tempor veniam amet velit magna ea laborum. Ea consectetur nulla deserunt laboris laboris elit 
-        ea Lorem exercitation cupidatat eiusmod reprehenderit magna.
-        <br/><br/>
-        Elit qui qui qui do occaecat veniam ad nulla dolore culpa reprehenderit elit laboris Lorem. Anim nulla qui pariatur nulla esse. 
-        Dolore amet et cillum commodo ut. Sunt culpa sint sunt anim esse ullamco dolore ad esse sint qui velit occaecat nulla.
-        <br/><br/>
-        Minim Lorem nisi dolor non laborum voluptate ut aute magna mollit ad ullamco ex. Magna qui aute est mollit officia est consequat cupidatat 
-        cupidatat irure culpa ipsum et. Aliqua Lorem Lorem amet veniam irure veniam amet anim excepteur ad ullamco.
-    </p>
-)
+const text: React.ReactNode = (
+  <p className="text-md">
+    Nilam tells the adventure of Malin Kundang, a young fisherman whose dream
+    was to sail the seas and find riches in the lands yonder. The departure of
+    Malin's father years ago had made his mother, Mirah, afraid of letting Malin
+    go to pursue his dreams, of losing another piece of her heart, leaving this
+    mother and son in a never-ending dispute. With the help of his childhood
+    friend, Delima, and the power of a mysterious magical relic, Malin's
+    anchored dream finally set sail.
+    <br />
+    <br />
+    Malin started from the bottom as a ship crew under Bara Abu's tutelage, a
+    merchant turned Malin's best friend. He met Rijang, Bara's simple-minded
+    assistant, Galih, Bara's boss and captain, and Mustika, Galih's daughter,
+    and quickly rose through the ranks, ending up as the right-hand man of the
+    captain, and also the right man for Mustika's heart. However, every action
+    has its consequences, and every secret has its price. Would all of Malin's
+    dreams come true, and at what cost?
+  </p>
+);
 
 export default function page() {
-  return (
-    <Details name="nilam" text={text} />
-  );
+  return <Details name="nilam" text={text} />;
 }
