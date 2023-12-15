@@ -4,6 +4,9 @@ import Supported_by from "./Supported_by";
 import { FlyInLeft } from "./FlyInLeft";
 import { FlyInRight } from "./FlyinRight";
 import { FadeUp } from "./FadeUp";
+import MediaPartners from "./MediaPartners";
+import PlatinumSponsors from "./PlatinumSponsors";
+import GoldSponsors from "./GoldSponsors";
 
 export default function Synopsis() {
   return (
@@ -105,22 +108,36 @@ export default function Synopsis() {
           </div>
         </div>
       </div>
-
-      {/* <div className="w-[100%] h-screen flex justify-center items-center mt-10 sm:mt-0">
-        <div className="w-[850px] flex flex-col space-y-[40px] overflow-y-auto">
-          <p className="font-gyahegi text-body text-[32px] text-center">
+      <div className="w-[100%] h-fit md:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
+        <div className="w-[1000px] flex flex-col space-y-[40px]">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+            Platinum Sponsors
+          </p>
+          <PlatinumSponsors />
+        </div>
+      </div>
+      <div className="w-[100%] h-fit md:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
+        <div className="w-[1000px] flex flex-col space-y-[40px]">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+            Gold Sponsors
+          </p>
+          <GoldSponsors />
+        </div>
+      </div>
+      <div className="w-[100%] h-fit md:h-[50vh] flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
+        <div className="w-[850px] flex flex-col space-y-[40px]">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
             Supported By
           </p>
           <Supported_by />
         </div>
-      </div> */}
-
-      <div className="w-[100%] h-fit sm:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
+      </div>
+      <div className="w-[100%] h-fit md:h-[50vh] flex justify-center items-center mt-10 pb-10 md:pb-0 md:mt-0">
         <div className="w-[850px] flex flex-col space-y-[40px]">
-          <p className="font-gyahegi text-body text-[32px] text-center">
-            Supported By
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+            Media Partners
           </p>
-          <Supported_by />
+          <MediaPartners />
         </div>
       </div>
     </main>

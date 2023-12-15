@@ -5,7 +5,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export default function Supported_by() {
+export default function GoldSponsors() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -18,13 +18,13 @@ export default function Supported_by() {
   }, [isInView]);
 
   const images = [
-    "KBRI logo.png",
-    "Sekolah Indonesia Singapura.png",
-    "PPI Singapura.png",
-    "PINTU Logo.png",
-    "Dolanesia.jpeg",
-    "Stalks and Petals.jpg",
-    "Trendink-logo-Colour.png",
+    "Bank Indonesia.png",
+    "BISA.png",
+    "Decrin.png",
+    "Elsound.png",
+    "Hillcon.png",
+    "Wardaya College.png",
+    "ivori.png",
   ] as const;
 
   return (
@@ -43,9 +43,9 @@ export default function Supported_by() {
           transition={{ duration: 0.3, delay: i * 0.13 }}
         >
           <Image
-            src={`/images/sponsors-logo/supporters/${path}`}
+            src={`/images/sponsors-logo/sponsors/Gold/${path}`}
             alt={path}
-            width={111.03}
+            width={170}
             height={0}
             className="mx-5 mb-10"
           />
