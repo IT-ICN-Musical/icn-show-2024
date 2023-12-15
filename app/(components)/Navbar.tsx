@@ -23,9 +23,11 @@ export default function Navbar(props: Props) {
     <div className="fixed w-full z-50 pt-10">
       <div
         className={`flex w-3/4 mx-auto lg:shadow-sm px-8 sm:px-16 py-4 rounded-full justify-between items-center bg-white transition-opacity ease-in-out duration-1000 ${
-          props.attribute === "home" && props.scrollable
-            ? "opacity-100"
-            : "opacity-0"
+          props.attribute === "home"
+            ? props.scrollable
+              ? "opacity-100"
+              : "opacity-0"
+            : "opacity-100"
         }`}
       >
         <div className="p">
