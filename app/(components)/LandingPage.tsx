@@ -38,45 +38,44 @@ export default function LandingPage({
     >
       <Image
         src="/assets/landing-page/landing bg.png"
+        className="object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <Image
         src="/assets/landing-page/landing bunga.png"
+        className="object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <Image
         src="/assets/landing-page/landing cloud.png"
+        className="object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <Image
         src="/assets/landing-page/landing percik kecil.png"
+        className="object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <Image
         src="/assets/landing-page/landing smoke.png"
+        className="object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <Image
         src="/assets/landing-page/landing star.png"
-        className="animate-pulse"
+        className="animate-pulse object-cover"
         alt="background"
         fill={true}
-        objectFit="cover"
         layout="fill"
       />
       <div
@@ -85,7 +84,7 @@ export default function LandingPage({
           openWindow && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold text-[#E8C67A]">
+        <h2 className="text-lg md:text-2xl font-bold text-white">
           Click to Continue
         </h2>
       </div>
@@ -95,7 +94,7 @@ export default function LandingPage({
           !scrollable && "opacity-0"
         )}
       >
-        <h2 className="text-lg md:text-2xl font-bold text-[#E8C67A]">
+        <h2 className="text-lg md:text-2xl font-bold text-white">
           Scroll Down
         </h2>
       </div>
@@ -106,16 +105,14 @@ export default function LandingPage({
             alt="jendelalangit"
             fill={true}
             unoptimized
-            objectFit="cover"
-            className="scale-[1.4] translate-x-[1%] translate-y-[4%]"
+            className="scale-[1.4] translate-x-[1%] translate-y-[4%] object-cover"
           />
           <Image
             src="/assets/landing-page/gedung.png"
             alt="gedung"
             fill={true}
             unoptimized
-            objectFit="cover"
-            className="scale-[1.35] translate-y-[6%]"
+            className="scale-[1.35] translate-y-[6%] object-cover"
           />
           <Image
             src="/assets/landing-page/kaharsa-logo.png"
@@ -124,12 +121,11 @@ export default function LandingPage({
             height={0}
             unoptimized
             ref={logoRef}
-            objectFit="cover"
             className={clsx(
-              "absolute left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 w-max max-w-none duration-1000  ease-in-out transition-[transform_opacity]",
+              "absolute left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 w-max max-w-none duration-1000 ease-in-out transition-[transform_opacity] object-cover",
               openWindow
-                ? "scale-[70%] opacity-100 delay-[1500ms]"
-                : "scale-50 opacity-0"
+                ? "scale-[40%] sm:scale-50 lg:scale-[70%] opacity-100 delay-[1500ms]"
+                : "scale-[20%] sm:scale-25 md:scale-50 opacity-0"
             )}
           />
           <Image
@@ -137,9 +133,8 @@ export default function LandingPage({
             alt="gordenkiri"
             fill={true}
             unoptimized
-            objectFit="cover"
             className={clsx(
-              "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out",
+              "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out object-cover",
               openWindow ? "-translate-x-[35%]" : "translate-x-[1%]"
             )}
           />
@@ -148,9 +143,8 @@ export default function LandingPage({
             alt="gordenkanan"
             fill={true}
             unoptimized
-            objectFit="cover"
             className={clsx(
-              "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out",
+              "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out object-cover",
               openWindow ? "translate-x-[35%]" : "translate-x-[1%]"
             )}
           />

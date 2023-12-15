@@ -9,7 +9,8 @@ import { useShoppingCart } from "../store/(context)/ShoppingCartContext";
 import DropdownMenu from "./DropdownMenu";
 
 type Props = {
-  attribute?: "transparent" | "shop";
+  attribute?: "shop" | "home";
+  scrollable?: boolean;
 };
 
 export default function Navbar(props: Props) {
@@ -21,10 +22,10 @@ export default function Navbar(props: Props) {
   return (
     <div className="fixed w-full z-50 pt-10">
       <div
-        className={`flex w-3/4 mx-auto lg:shadow-sm px-8 sm:px-16 py-4 rounded-full justify-between items-center ${
-          props.attribute === "transparent"
-            ? "backdrop-blur-[15px] bg-navbar-gradient border-1 border-white border-[1px]"
-            : "bg-white"
+        className={`flex w-3/4 mx-auto lg:shadow-sm px-8 sm:px-16 py-4 rounded-full justify-between items-center bg-white transition-opacity ease-in-out duration-1000 ${
+          props.attribute === "home" && props.scrollable
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <div className="p">

@@ -103,7 +103,16 @@ export default function Synopsis() {
         </div>
       </div>
 
-      <div className="w-[100%] h-screen flex justify-center items-center">
+      {/* <div className="w-[100%] h-screen flex justify-center items-center mt-10 sm:mt-0">
+        <div className="w-[850px] flex flex-col space-y-[40px] overflow-y-auto">
+          <p className="font-gyahegi text-body text-[32px] text-center">
+            Supported By
+          </p>
+          <Supported_by />
+        </div>
+      </div> */}
+
+      <div className="w-[100%] h-fit sm:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
         <div className="w-[850px] flex flex-col space-y-[40px]">
           <p className="font-gyahegi text-body text-[32px] text-center">
             Supported By

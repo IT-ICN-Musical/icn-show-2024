@@ -4,11 +4,6 @@ import items from "./data.json";
 import { StoreItem } from "./(components)/StoreItem";
 import Footer from "../(components)/Footer";
 import Navbar from "../(components)/Navbar";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "./(components)/(utils)/HoverCard";
 
 const Page: React.FC = () => {
   return (
@@ -31,27 +26,6 @@ const Page: React.FC = () => {
             ))}
           </div>
         </div>
-        <HoverCard>
-          <HoverCardTrigger asChild>
-            <button className="border border-[#092054] rounded-full p-2.5 transition-all duration-300 w-16 h-16 bg-[#092054] text-white sticky bottom-10 2xl:left-16 xl:left-8 left-4">
-              <i className="fa fa-comment fa-lg " />
-            </button>
-          </HoverCardTrigger>
-          <HoverCardContent align="start" side="top">
-            <p className="mb-1 font-bold">Contact Us:</p>
-
-            <p className="mb-2">
-              <span className="font-semibold">Keiko</span> <br /> Telegram:
-              @keikorenata <br />
-              Whatsapp: +65 87903093
-            </p>
-            <p>
-              <span className="font-semibold">Ano</span> <br /> Telegram:
-              @andrewnyco <br />
-              Whatsapp: +65 88848001
-            </p>
-          </HoverCardContent>
-        </HoverCard>
       </div>
       <Footer />
     </main>

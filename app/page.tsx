@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import LandingPage from "./(components)/LandingPage";
 import LandingPageContent from "./(components)/LandingPageContent";
+import Navbar from "./(components)/Navbar";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <main className="overflow-y-hidden">
+      <Navbar attribute="home" scrollable={scrollable} />
       <LandingPage
         openWindow={isOpen}
         scrollable={scrollable}

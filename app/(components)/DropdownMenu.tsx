@@ -6,7 +6,8 @@ import ShoppingCart from "../store/(components)/ShoppingCart";
 import { useShoppingCart } from "../store/(context)/ShoppingCartContext";
 
 type Props = {
-  attribute?: "transparent" | "shop";
+  attribute?: "transparent" | "shop" | "home";
+  scrollable?: boolean;
 };
 
 export default function DropdownMenu(props: Props) {
