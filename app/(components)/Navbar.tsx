@@ -44,7 +44,7 @@ export default function Navbar(props: Props) {
             <div className="flex flex-row h-fit">
               <Button url="">Home</Button>
               <Button url="cast">Cast</Button>
-              <Button url="about-us">About Us</Button>
+              <Button url="about_us">About Us</Button>
               <Button url="store" color="dark" animate="animate">
                 Buy Tickets
               </Button>

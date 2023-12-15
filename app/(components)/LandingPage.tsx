@@ -104,14 +104,12 @@ export default function LandingPage({
             src="/images/landing-page/landing bg jendelalangit.png"
             alt="jendelalangit"
             fill={true}
-            unoptimized
             className="scale-[1.4] translate-x-[1%] translate-y-[4%] object-cover"
           />
           <Image
             src="/images/landing-page/gedung.png"
             alt="gedung"
             fill={true}
-            unoptimized
             className="scale-[1.35] translate-y-[6%] object-cover"
           />
           <Image
@@ -132,7 +130,6 @@ export default function LandingPage({
             src="/images/landing-page/gorden kiri.png"
             alt="gordenkiri"
             fill={true}
-            unoptimized
             className={clsx(
               "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out object-cover",
               openWindow ? "-translate-x-[35%]" : "translate-x-[1%]"
@@ -142,7 +139,6 @@ export default function LandingPage({
             src="/images/landing-page/gorden kanan.png"
             alt="gordenkanan"
             fill={true}
-            unoptimized
             className={clsx(
               "scale-[1.4] translate-y-[4%] transition-transform duration-1000 ease-in-out object-cover",
               openWindow ? "translate-x-[35%]" : "translate-x-[1%]"
