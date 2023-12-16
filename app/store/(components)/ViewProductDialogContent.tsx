@@ -23,6 +23,9 @@ export default function ViewProductDialogContent(props: StoreItemData) {
           unoptimized
           src={props.imgUrl}
           alt={props.name}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/images/store/ticket.png";
+          }}
         />
         <div className="flex flex-col justify-center px-5 w-3/5 h-full ">
           <Label className="font-bold text-xl">{props.name}</Label>

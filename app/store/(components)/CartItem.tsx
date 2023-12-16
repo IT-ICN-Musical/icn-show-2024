@@ -27,10 +27,13 @@ export function CartItem(props: CartItemProps) {
           alt={item.name}
           width={0}
           height={0}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/images/store/ticket.png";
+          }}
           unoptimized
           className="w-20 h-20 mr-4 rounded-md"
         />
-        <div className=" space-y-1">
+        <div className="space-y-1 w-[40%]">
           <p className="text-xl font-semibold leading-none">
             {item.name}
             <span className="pl-2 text-sm font-semibold leading-none text-slate-500">

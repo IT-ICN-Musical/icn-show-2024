@@ -33,6 +33,9 @@ export function StoreItem(props: StoreItemData) {
           unoptimized
           src={props.imgUrl}
           alt={props.name}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/images/store/ticket.png";
+          }}
         />
         <CardTitle className="px-6 pt-3">{props.name}</CardTitle>
         <CardDescription className="px-6">

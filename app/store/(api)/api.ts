@@ -33,7 +33,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       endPeriod: item.endPeriodSgt,
       price: item.matineeTicketPriceSgd,
       stock: item.matineeTicketStock,
-      imgUrl: "/images/store/book.jpg",
+      imgUrl: `/images/store/${item.productName.toLowerCase()}_matinee.png`,
       isPromotion,
       numTickets,
     };
@@ -49,7 +49,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       endPeriod: item.endPeriodSgt,
       price: item.nightTicketPriceSgd,
       stock: item.nightTicketStock,
-      imgUrl: "/images/store/book.jpg",
+      imgUrl: `/images/store/${item.productName.toLowerCase()}_night.png`,
       isPromotion,
       numTickets,
     };
