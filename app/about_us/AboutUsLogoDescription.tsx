@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { FadeUp } from "./FadeUp";
+import { FadeUp } from "../(components)/FadeUp";
 
 export default function AboutUsLogoDescription() {
   return (
@@ -16,8 +16,9 @@ export default function AboutUsLogoDescription() {
                   <Image
                     src="/images/kaharsa-full.png"
                     alt="Asset 1"
-                    width={800}
+                    width={550}
                     height={0}
+                    className="px-10"
                   />
                 </div>
               </div>

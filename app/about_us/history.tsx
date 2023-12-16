@@ -98,7 +98,9 @@ export default function History() {
       </div>
       <div className="w-screen h-screen flex justify-center items-center bg-[#FBF8F3]">
         <FadeUp x={0} duration={0.5}>
-          <p className="font-gyahegi text-[64px] text-black">And Now...</p>
+          <p className="font-gyahegi text-4xl md:text-5xl text-black">
+            And Now...
+          </p>
         </FadeUp>
       </div>
     </main>

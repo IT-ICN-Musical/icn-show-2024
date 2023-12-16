@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import AboutUsLogoDescription from "../(components)/AboutUsLogoDescription";
+import AboutUsLogoDescription from "./AboutUsLogoDescription";
 import Tickets from "../(components)/Tickets";
 import History from "./history";
 import Navbar from "../(components)/Navbar";
