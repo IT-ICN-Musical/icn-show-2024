@@ -40,6 +40,7 @@ export default function PlatinumSponsors() {
             width={250}
             height={0}
             className="mx-10 mb-20"
+            loading="eager"
           />
         </motion.div>
       ))}
@@ -61,6 +62,7 @@ export default function PlatinumSponsors() {
           width={250}
           height={0}
           className="mx-10 mb-20 scale-[180%]"
+          loading="eager"
         />
       </motion.div>
     </div>

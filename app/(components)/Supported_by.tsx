@@ -48,6 +48,7 @@ export default function Supported_by() {
             width={111.03}
             height={0}
             className="mx-5 mb-10"
+            loading="eager"
           />
         </motion.div>
       ))}
