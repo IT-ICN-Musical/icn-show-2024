@@ -41,6 +41,11 @@ export default function EmblaThumb({
       onClick={onClick}
       type="button"
     >
+      {selected && !shrinked && (
+        <div className="fixed top-[45%] text-white font-semibold font-gyahegi text-[12px]">
+          Double Click to See More
+        </div>
+      )}
       <Image
         ref={shrinkRef}
         className={`aspect-[2/3] object-cover rounded-2xl`}
