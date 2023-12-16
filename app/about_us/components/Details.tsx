@@ -17,10 +17,10 @@ export default function page(props: DetailsProps) {
             width={160}
             height={160}
           />
-          <p className="flex font-gyahegi text-6xl">{title}</p>
+          <p className="flex font-gyahegi text-6xl mb-10 sm:mb-0">{title}</p>
         </div>
 
-        <div className="flex w-[100%] justify-center flex-col lg:flex-row mt-[5%] space-x-[6%] px-[10%]">
+        <div className="flex w-[100%] justify-center flex-col lg:flex-row mt-[5%] lg:space-x-[6%] px-[10%]">
           <div className="flex lg:max-w-[60%] lg:self-start justify-center">
             <Image
               className="rounded-2xl"
@@ -31,7 +31,7 @@ export default function page(props: DetailsProps) {
               loading="lazy"
             />
           </div>
-          <div className="grid grid-cols-1 lg:max-w-[40%] lg:self-start justify-center mb-[5%] mt-10 lg:mt-0">
+          <div className="grid grid-cols-1 lg:max-w-[40%] lg:self-start mb-[5%] mt-10 lg:mt-0 text-justify">
             {props.text}
             <div className="lg:space-x-[5%] mt-[5%]">
               <Buttons name={props.name} />

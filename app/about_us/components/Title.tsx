@@ -15,7 +15,7 @@ export default function Title(props: TitleProps) {
     <div
       className={`${opacity} relative z-10 w-10 md:min-w-[65%] min-h-screen flex items-center justify-center`}
     >
-      <p className="font-gyahegi text-[64px] hidden md:block pl-10">
+      <p className="font-gyahegi text-[4rem] hidden md:block pl-16 pr-6">
         Our Journey
       </p>
     </div>

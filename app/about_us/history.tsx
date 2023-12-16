@@ -42,7 +42,7 @@ export default function History() {
                 height={1020}
               />
             </div>
-            <div className="w-[100%] lg:w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]">
+            <div className="w-[100%] lg:w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%] md:pr-4 lg:pr-0">
               <Card
                 year="2023"
                 name="Saujana"

@@ -20,7 +20,7 @@ export default function DropdownMenu(props: Props) {
   }, [cartQuantity]);
 
   return (
-    <div className="relative">
+    <div className="relative scale-75 md:scale-100">
       <button
         className="flex flex-col h-12 w-12 border-2 border-black justify-center items-center group bg-white rounded-xl"
         onClick={() => {

@@ -22,7 +22,7 @@ export default function Navbar(props: Props) {
   return (
     <div className="fixed w-full z-50 pt-10">
       <div
-        className={`flex w-3/4 mx-auto lg:shadow-sm px-8 sm:px-16 py-4 rounded-full justify-between items-center bg-white transition-opacity ease-in-out duration-1000 ${
+        className={`flex w-3/4 mx-auto lg:shadow-sm px-10 sm:px-16 py-1 md:py-4 rounded-full justify-between items-center bg-white transition-opacity ease-in-out duration-1000 ${
           props.attribute === "home"
             ? props.scrollable
               ? "opacity-100"
@@ -35,8 +35,9 @@ export default function Navbar(props: Props) {
             src={ICNLogo}
             alt="ICNLogo"
             width={67.399}
-            height={60}
+            height={0}
             quality={100}
+            className="w-10 md:w-12 lg:w-16"
           />
         </div>
         <div className="flex flex-row items-center space-x-[1.5rem]">
