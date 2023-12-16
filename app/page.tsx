@@ -18,7 +18,7 @@ export default function Home() {
   }, [scrollable]);
 
   return (
-    <main className="overflow-y-hidden">
+    <main className="overflow-hidden">
       <Navbar attribute="home" scrollable={scrollable} />
       <LandingPage
         openWindow={isOpen}
