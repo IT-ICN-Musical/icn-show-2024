@@ -52,7 +52,7 @@ export default function DropdownMenu(props: Props) {
         <div className="absolute right-0 bg-white shadow-md p-4 rounded-lg w-44 flex flex-col justify-center items-center">
           <Button url="">Home</Button>
           <Button url="cast">Cast</Button>
-          <Button url="about-us">About Us</Button>
+          <Button url="about_us">About Us</Button>
           <Button url="store" color="dark" animate="animate">
             Buy Tickets
           </Button>

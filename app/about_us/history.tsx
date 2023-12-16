@@ -25,7 +25,7 @@ export default function History() {
 
       <div className="w-[100%] h-screen flex items-center justify-center">
         <Title activeCard={activeCard} />
-        <div className="w-[80%] sm:w-[50%] md:w-[35%] h-screen flex items-center justify-center">
+        <div className="w-[75%] sm:w-[60%] lg:w-[35%] h-screen flex items-center justify-center">
           <div
             className="w-[100%] h-[80%] mb-[5%] flex self-end justify-center overflow-auto no-scrollbar space-x-[2%]"
             style={{
@@ -42,7 +42,7 @@ export default function History() {
                 height={1020}
               />
             </div>
-            <div className="w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]">
+            <div className="w-[100%] lg:w-[70%] h-full grid grid-cols-1 justify-items-center content-start py-[60px] gap-y-[60px] mb-[90%]">
               <Card
                 year="2023"
                 name="Saujana"
@@ -98,9 +98,7 @@ export default function History() {
       </div>
       <div className="w-screen h-screen flex justify-center items-center bg-[#FBF8F3]">
         <FadeUp x={0} duration={0.5}>
-          <p className="font-gyahegi text-5xl hidden md:block text-black">
-            And Now...
-          </p>
+          <p className="font-gyahegi text-[64px] text-black">And Now...</p>
         </FadeUp>
       </div>
     </main>
