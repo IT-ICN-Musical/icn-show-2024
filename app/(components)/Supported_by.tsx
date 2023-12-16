@@ -18,12 +18,12 @@ export default function Supported_by() {
   }, [isInView]);
 
   const images = [
-    "KBRI logo.png",
+    "KBRI.png",
     "Sekolah Indonesia Singapura.png",
     "PPI Singapura.png",
     "PINTU Logo.png",
-    "Dolanesia.jpeg",
-    "Stalks and Petals.jpg",
+    "Dolanesia.png",
+    "Stalks and Petals.png",
     "Trendink-logo-Colour.png",
   ] as const;
 

@@ -17,33 +17,50 @@ export default function PlatinumSponsors() {
     }
   }, [isInView]);
 
-  const images = ["indomie.png", "braincode solution.png"] as const;
-
   return (
     <div className="flex flex-wrap justify-center items-center mx-[10%]">
-      {images.map((path: string, i: number) => (
-        <motion.div
-          ref={ref}
-          key={i}
-          className="flex items-center justify-center"
-          variants={{
-            hidden: { opacity: 0, y: 10 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate={mainControls}
-          transition={{ duration: 0.3, delay: i * 0.13 }}
-        >
-          <Image
-            src={`/images/sponsors-logo/sponsors/Platinum/${path}`}
-            alt={path}
-            width={250}
-            height={0}
-            className="mx-10 mb-20"
-            loading="eager"
-          />
-        </motion.div>
-      ))}
+      <motion.div
+        ref={ref}
+        key={0}
+        className="flex items-center justify-center"
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.3, delay: 0 * 0.13 }}
+      >
+        <Image
+          src={`/images/sponsors-logo/sponsors/Platinum/indomie.png`}
+          alt="indomie.png"
+          width={250}
+          height={0}
+          className="mx-10 mb-20 scale-[90%]"
+          loading="eager"
+        />
+      </motion.div>
+      <motion.div
+        ref={ref}
+        key={1}
+        className="flex items-center justify-center"
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.3, delay: 1 * 0.13 }}
+      >
+        <Image
+          src={`/images/sponsors-logo/sponsors/Platinum/braincode solution.png`}
+          alt="braincode.png"
+          width={250}
+          height={0}
+          className="mx-10 mb-20"
+          loading="eager"
+        />
+      </motion.div>
       <motion.div
         ref={ref}
         key={2}
@@ -61,7 +78,7 @@ export default function PlatinumSponsors() {
           alt="samudera.png"
           width={250}
           height={0}
-          className="mx-10 mb-20 scale-[180%]"
+          className="mx-10 mb-20 scale-[180%] px-5"
           loading="eager"
         />
       </motion.div>
