@@ -10,6 +10,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../store/(components)/(utils)/HoverCard";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -22,17 +23,28 @@ export default function Footer() {
       <div className="flex absolute inset-0 items-center justify-between px-5 md:px-10 lg:px-44">
         <Image src={icnLogo} alt="ICN logo" className="w-20 mx-2" />
         <div className="flex1 flex w-72 items-center justify-between px-4">
-          <Image
-            src={instagram}
-            alt="Instagram Button"
-            className="w-10 sm:w-14"
-          />
-          <Image
-            src={facebook}
-            alt="Facebook Button"
-            className="w-10 sm:w-14"
-          />
-          <Image src={youtube} alt="Youtube Button" className="w-10 sm:w-14" />
+          <Link href="https://www.instagram.com/icnmusical">
+            <Image
+              src={instagram}
+              alt="Instagram Button"
+              className="w-10 sm:w-14"
+            />
+          </Link>
+          <Link href="https://www.facebook.com/ICNmusical/">
+            <Image
+              src={facebook}
+              alt="Facebook Button"
+              className="w-10 sm:w-14"
+            />
+          </Link>
+
+          <Link href="https://www.youtube.com/ICNMusical">
+            <Image
+              src={youtube}
+              alt="Youtube Button"
+              className="w-10 sm:w-14"
+            />
+          </Link>
         </div>
         <HoverCard>
           <HoverCardTrigger asChild>

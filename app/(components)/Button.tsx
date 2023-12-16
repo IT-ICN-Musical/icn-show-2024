@@ -6,11 +6,12 @@ type Props = {
   children: string;
   animate?: string;
   color?: string;
+  outsideURL?: boolean;
 };
 
 export default function Button(prop: Props) {
   return (
-    <Link href={`/${prop.url}`}>
+    <Link href={`${prop.outsideURL ? prop.url : "/" + prop.url}`}>
       <a
         className={`text-center px-5 py-1 font-normal leading-normal rounded-[0.5rem] transition-colors duration-300 ease-in-out
                     ${prop.color === "dark" ? "text-white bg-[#092054]" : ""} ${
