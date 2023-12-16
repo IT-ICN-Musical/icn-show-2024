@@ -35,7 +35,7 @@ export default function PlatinumSponsors() {
           transition={{ duration: 0.3, delay: i * 0.13 }}
         >
           <Image
-            src={`/images/sponsors-logo/sponsors/platinum/${path}`}
+            src={`/images/sponsors-logo/sponsors/Platinum/${path}`}
             alt={path}
             width={250}
             height={0}
@@ -56,7 +56,7 @@ export default function PlatinumSponsors() {
         transition={{ duration: 0.3, delay: 2 * 0.13 }}
       >
         <Image
-          src={`/images/sponsors-logo/sponsors/platinum/samudera.png`}
+          src={`/images/sponsors-logo/sponsors/Platinum/samudera.png`}
           alt="samudera.png"
           width={250}
           height={0}
