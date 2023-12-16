@@ -1,21 +1,20 @@
 import React from "react";
-import { useShoppingCart } from "../(context)/ShoppingCartContext";
-import storeItems from "../data.json";
 import { Button } from "./(utils)/Button";
 import { Separator } from "./(utils)/Separator";
 import ViewProductDialogContent from "./ViewProductDialogContent";
 import { Dialog, DialogTrigger } from "./(utils)/Dialog";
 import { AlertDialog, AlertDialogTrigger } from "./(utils)/AlertDialog";
 import DeleteAlertDialogContent from "./DeleteAlertDialogContent";
-
+import { useData } from "../(context)/StoreDataContext";
+import Image from "next/image";
 type CartItemProps = {
   id: number;
   quantity: number;
 };
 
 export function CartItem(props: CartItemProps) {
-  const { removeFromCart } = useShoppingCart();
-  const item = storeItems.find((item) => item.id === props.id);
+  const { data } = useData();
+  const item = data?.find((item) => item.id === props.id);
   if (item == null) {
     return null;
   }
@@ -23,10 +22,13 @@ export function CartItem(props: CartItemProps) {
   return (
     <div className="mb-4">
       <div className="flex items-center mb-4">
-        <img
+        <Image
           src={item.imgUrl}
           alt={item.name}
-          className="w-20 h-20 object-fit mr-4 rounded-md"
+          width={0}
+          height={0}
+          unoptimized
+          className="w-20 h-20 mr-4 rounded-md"
         />
         <div className=" space-y-1">
           <p className="text-xl font-semibold leading-none">

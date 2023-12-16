@@ -1,4 +1,5 @@
 import { useShoppingCart } from "../(context)/ShoppingCartContext";
+import { StoreItemData } from "../(types)/types";
 import { Button } from "./(utils)/Button";
 import {
   Dialog,
@@ -9,15 +10,7 @@ import {
 } from "./(utils)/Dialog";
 import EditAudienceDialogItem from "./EditAudienceDialogItem";
 
-type StoreItemProps = {
-  id: number;
-  name: string;
-  numTickets: number;
-  price: number;
-  imgUrl: string;
-};
-
-export default function EditAudienceDialog(props: StoreItemProps) {
+export default function EditAudienceDialog(props: StoreItemData) {
   const { getItemProducts } = useShoppingCart();
 
   const products = getItemProducts(props.id);

@@ -11,17 +11,10 @@ import {
   CardTitle,
 } from "./(utils)/Card";
 import { Label } from "./(utils)/Label";
+import { StoreItemData } from "../(types)/types";
+import Image from "next/image";
 
-type StoreItemProps = {
-  id: number;
-  name: string;
-  numTickets: number;
-  price: number;
-  stock: number;
-  imgUrl: string;
-};
-
-export function StoreItem(props: StoreItemProps) {
+export function StoreItem(props: StoreItemData) {
   const { getItemQuantity } = useShoppingCart();
   const [quantity, setQuantity] = useState(0);
 
@@ -33,8 +26,11 @@ export function StoreItem(props: StoreItemProps) {
   return (
     <Card className="lg:max-w-md w-full max-w-sm rounded-xl transform transition-transform hover:scale-[102%] ease-in-out duration-500">
       <CardHeader className="block p-0">
-        <img
+        <Image
           className="w-full h-52 rounded-t-xl"
+          width={0}
+          height={0}
+          unoptimized
           src={props.imgUrl}
           alt={props.name}
         />
