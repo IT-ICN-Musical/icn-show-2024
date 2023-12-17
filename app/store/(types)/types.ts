@@ -42,4 +42,5 @@ export type StoreItemData = {
   isPromotion: boolean;
   showTime: string;
   numTickets: number;
+  timing: string;
 };

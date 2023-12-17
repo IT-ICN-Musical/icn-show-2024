@@ -52,6 +52,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       numTickets,
       showTime: "matinee",
       price: matineePrice,
+      timing: "3 February 2024, 14.00 - 16.45 SGT",
     };
 
     processedData.push(matineeTicket);
@@ -69,6 +70,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       numTickets,
       showTime: "night",
       price: nightPrice,
+      timing: "3 February 2024, 19:00 - 21:45 SGT",
     };
 
     processedData.push(nightTicket);

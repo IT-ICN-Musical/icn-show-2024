@@ -44,9 +44,7 @@ export default function ViewProductDialogContent(props: StoreItemData) {
           <Label className="text-xs sm:block hidden">{props.description}</Label>
           <div className="flex mt-2">
             <FaCalendarDays size={15} />
-            <Label className="text-xs pl-1">
-              3 February 2024, 14.00 - 16.45 SGT
-            </Label>
+            <Label className="text-xs pl-1">{props.timing}</Label>
           </div>
           <div className="my-2">
             <Separator />
