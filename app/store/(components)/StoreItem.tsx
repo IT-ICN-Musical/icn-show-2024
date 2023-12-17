@@ -24,7 +24,7 @@ export function StoreItem(props: StoreItemData) {
   }, [getItemQuantity, props.id]);
 
   return (
-    <Card className="lg:max-w-md w-full max-w-sm rounded-xl transform transition-transform hover:scale-[102%] ease-in-out duration-500">
+    <Card className="lg:max-w-md w-full max-w-[20rem] rounded-xl transform transition-transform hover:scale-[102%] ease-in-out duration-500">
       <CardHeader className="block p-0">
         <Image
           className="w-full h-52 rounded-t-xl"

@@ -37,7 +37,7 @@ const Page: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="mt-10 font-bold text-4xl mb-6 text-center md:text-left px-10 xl:px-0">
+              <div className="mt-10 font-bold text-4xl mb-6 text-center lg:text-left px-10 xl:px-0">
                 Promotions
               </div>
               <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4 md:px-10 xl:px-0">
@@ -53,7 +53,7 @@ const Page: React.FC = () => {
                     )
                 )}
               </div>
-              <div className="mt-10 font-bold text-4xl mb-6 text-center md:text-left px-10 xl:px-0">
+              <div className="mt-10 font-bold text-4xl mb-6 text-center lg:text-left px-10 xl:px-0">
                 Products
               </div>
               <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4 md:px-10 xl:px-0">

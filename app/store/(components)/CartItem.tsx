@@ -6,7 +6,6 @@ import { Dialog, DialogTrigger } from "./(utils)/Dialog";
 import { AlertDialog, AlertDialogTrigger } from "./(utils)/AlertDialog";
 import DeleteAlertDialogContent from "./DeleteAlertDialogContent";
 import { useData } from "../(context)/StoreDataContext";
-// import Image from "next/image";
 
 type CartItemProps = {
   id: number;
@@ -23,18 +22,7 @@ export function CartItem(props: CartItemProps) {
   return (
     <div className="mb-4">
       <div className="flex items-center mb-4">
-        {/* <Image
-          src={item.imgUrl}
-          alt={item.name}
-          width={0}
-          height={0}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = "/images/store/ticket.png";
-          }}
-          unoptimized
-          className="w-20 h-20 mr-4 rounded-md"
-        /> */}
-        <div className="space-y-1 w-[40%]">
+        <div className="space-y-1 w-[70%]">
           <p className="text-xl font-semibold leading-none">
             {item.name}
             <span className="pl-2 text-sm font-semibold leading-none text-slate-500">
