@@ -17,10 +17,10 @@ const Page: React.FC = () => {
         const backendData = await fetchData();
         const processedData = preprocessData(backendData);
         setData(processedData);
-        setLoading(false); // Set loading to false after data is fetched and processed
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching and processing data:", error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       }
     };
 
