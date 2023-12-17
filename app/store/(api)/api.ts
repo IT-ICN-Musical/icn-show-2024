@@ -1,4 +1,3 @@
-// api.ts
 import { BackendData, StoreItemData } from "../(types)/types";
 import { API_URL } from "./constants";
 
@@ -32,6 +31,14 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       ? item.nightTicketPriceSgd * numTickets
       : item.nightTicketPriceSgd;
 
+    const matineeTicketStock = item.productName.toLowerCase().includes("bundle")
+      ? item.matineeTicketStock / numTickets
+      : item.matineeTicketStock;
+
+    const nightTicketStock = item.productName.toLowerCase().includes("bundle")
+      ? item.nightTicketStock / numTickets
+      : item.nightTicketStock;
+
     const matineeTicket: StoreItemData = {
       id: autoIncrementId++,
       productId: item.productId,
@@ -39,7 +46,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       description: `${item.productDescription}`,
       startPeriod: item.startPeriodSgt,
       endPeriod: item.endPeriodSgt,
-      stock: item.matineeTicketStock,
+      stock: matineeTicketStock,
       imgUrl: `/images/store/${item.productId}_matinee.png`,
       isPromotion,
       numTickets,
@@ -56,7 +63,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       description: `${item.productDescription}`,
       startPeriod: item.startPeriodSgt,
       endPeriod: item.endPeriodSgt,
-      stock: item.nightTicketStock,
+      stock: nightTicketStock,
       imgUrl: `/images/store/${item.productId}_night.png`,
       isPromotion,
       numTickets,
