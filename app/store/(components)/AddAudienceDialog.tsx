@@ -69,7 +69,10 @@ export default function AddAudienceDialog(props: StoreItemData) {
     for (let i = 0; i < inputCount; i++) {
       inputs.push(
         <div key={i} className="grid grid-cols-4 items-center gap-4">
-          <Label htmlFor={`Audience ${i + 1}`} className="text-right">
+          <Label
+            htmlFor={`Audience ${i + 1}`}
+            className="text-right sm:text-sm text-xs"
+          >
             Audience {i + 1}
           </Label>
           <Input

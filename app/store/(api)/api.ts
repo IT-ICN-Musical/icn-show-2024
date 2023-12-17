@@ -3,7 +3,7 @@ import { API_URL } from "./constants";
 
 export const fetchData = async (): Promise<BackendData[]> => {
   try {
-    const response = await fetch(`${API_URL}/products`);
+    const response = await fetch(`${API_URL}/products/active`);
     const backendData: BackendData[] = await response.json();
     return backendData;
   } catch (error) {

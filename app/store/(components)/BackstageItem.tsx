@@ -46,7 +46,7 @@ export function BackstageItem() {
             <DialogContent>
               <div>
                 <div className="font-bold text-2xl">Backstage Pass</div>
-                <div className="text-sm mt-3">
+                <div className="text-sm font-semibold mt-3">
                   🎭 Backstage Pass Order Now Available! 🌟Get ready to elevate
                   your theatre experience! Our exclusive Backstage Pass is up
                   for grabs for just S$12/person! Limited availability.
