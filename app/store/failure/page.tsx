@@ -15,7 +15,7 @@ export default function Failure() {
               Your Purchase is Unsuccessful
             </div>
             <div className="px-5">
-              <p className=" font-serif mb-2 font-bold px-5">
+              <p className="mb-2 font-bold px-5">
                 For Further Information, Please Contact:
               </p>
               <div className="flex flex-col sm:flex-row">

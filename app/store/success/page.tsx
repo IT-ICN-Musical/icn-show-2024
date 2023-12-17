@@ -9,16 +9,19 @@ export default function Success() {
         <FadeUp x={0} duration={0.5}>
           <div>
             <div className="flex font-gyahegi text-4xl md:text-5xl text-black pb-10 items-center justify-center">
-              <p>Success</p>
+              <p>Thank You</p>
             </div>
             <div className="flex justify-center font-serif text-xl md:text-2xl text-black mb-4">
-              Your Purchase is Successful
+              For Your Purchase
             </div>
             <div className="px-5">
-              <p className="flex font-serif mb-2 font-bold px-5 flex-wrap">
-                If You Do Not Receive the Tickets Within 24 Hours,
+              <p className="flex mb-2 font-bold px-5 flex-wrap">
+                The tickets will arrive within 24 hours. <br /> If You could not
+                find your tickets, please check your spam/junk folder.
                 <br />
-                Please Contact:
+              </p>
+              <p className="mx-5 my-2 font-bold">
+                Should you have any problems, please contact:
               </p>
               <div className="flex flex-col sm:flex-row">
                 <p className="mb-2 px-5">

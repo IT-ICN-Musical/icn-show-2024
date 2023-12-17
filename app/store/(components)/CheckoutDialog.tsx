@@ -95,9 +95,9 @@ export default function CheckoutDialog() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          buyerName: buyerName,
-          buyerPhoneNumber: buyerTelp,
-          buyerEmail: buyerEmail,
+          buyerName: buyerName.trim(),
+          buyerPhoneNumber: buyerTelp.trim(),
+          buyerEmail: buyerEmail.trim(),
           orders: result,
         }),
       });
