@@ -1,12 +1,11 @@
 import React from "react";
-import { useShoppingCart } from "../(context)/ShoppingCartContext";
-import storeItems from "../data.json";
 import { Button } from "./(utils)/Button";
 import { Separator } from "./(utils)/Separator";
 import ViewProductDialogContent from "./ViewProductDialogContent";
 import { Dialog, DialogTrigger } from "./(utils)/Dialog";
 import { AlertDialog, AlertDialogTrigger } from "./(utils)/AlertDialog";
 import DeleteAlertDialogContent from "./DeleteAlertDialogContent";
+import { useData } from "../(context)/StoreDataContext";
 
 type CartItemProps = {
   id: number;
@@ -14,8 +13,8 @@ type CartItemProps = {
 };
 
 export function CartItem(props: CartItemProps) {
-  const { removeFromCart } = useShoppingCart();
-  const item = storeItems.find((item) => item.id === props.id);
+  const { data } = useData();
+  const item = data?.find((item) => item.id === props.id);
   if (item == null) {
     return null;
   }
@@ -23,12 +22,7 @@ export function CartItem(props: CartItemProps) {
   return (
     <div className="mb-4">
       <div className="flex items-center mb-4">
-        <img
-          src={item.imgUrl}
-          alt={item.name}
-          className="w-20 h-20 object-fit mr-4 rounded-md"
-        />
-        <div className=" space-y-1">
+        <div className="space-y-1 w-[70%]">
           <p className="text-xl font-semibold leading-none">
             {item.name}
             <span className="pl-2 text-sm font-semibold leading-none text-slate-500">

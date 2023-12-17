@@ -1,23 +1,10 @@
 "use client";
-import { useState, createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 import { useLocalStorage } from "../(hooks)/useLocalStorage";
+import { CartItem, Product } from "../(types)/types";
+
 type ShoppingCartProviderProps = {
   children: React.ReactNode;
-};
-
-type CartItem = {
-  id: number;
-  product: Product[];
-};
-
-type Product = {
-  productId: number;
-  audience: Audience[];
-};
-
-type Audience = {
-  audienceId: number;
-  name: string;
 };
 
 type ShoppingCartContext = {

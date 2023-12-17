@@ -8,10 +8,11 @@ import {
   SheetTrigger,
 } from "./(utils)/Sheet";
 
-import storeItems from "../data.json";
 import CheckoutDialog from "./CheckoutDialog";
+import { useData } from "../(context)/StoreDataContext";
 
 export default function ShoppingCart() {
+  const { data } = useData();
   const { getItemQuantity, cartItems, cartQuantity } = useShoppingCart();
   return (
     <Sheet>
@@ -51,7 +52,7 @@ export default function ShoppingCart() {
           <div>
             $
             {cartItems.reduce((total, cartItem) => {
-              const item = storeItems.find(
+              const item = data?.find(
                 (item: { id: number }) => item.id === cartItem.id
               );
               return total + (item?.price || 0) * getItemQuantity(cartItem.id);

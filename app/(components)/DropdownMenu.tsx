@@ -25,7 +25,6 @@ export default function DropdownMenu(props: Props) {
         className="flex flex-col h-12 w-12 border-2 border-black justify-center items-center group bg-white rounded-xl"
         onClick={() => {
           setIsOpen(!isOpen);
-          console.log("abc");
         }}
       >
         <div

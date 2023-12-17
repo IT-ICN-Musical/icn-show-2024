@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import { ShoppingCartProvider } from "./store/(context)/ShoppingCartContext";
+import { DataProvider } from "./store/(context)/StoreDataContext";
 
 const gyahegi = localFont({
   src: "./Gyahegi.otf",
@@ -34,7 +35,9 @@ export default function RootLayout({
         className={`${montserrat.className} ${gyahegi.variable}`}
         suppressHydrationWarning={true}
       >
-        <ShoppingCartProvider>{children}</ShoppingCartProvider>
+        <DataProvider>
+          <ShoppingCartProvider>{children}</ShoppingCartProvider>
+        </DataProvider>
       </body>
     </html>
   );

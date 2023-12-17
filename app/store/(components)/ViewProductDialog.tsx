@@ -1,18 +1,10 @@
+import { StoreItemData } from "../(types)/types";
 import { Button } from "./(utils)/Button";
 import { Dialog, DialogTrigger } from "./(utils)/Dialog";
 
 import ViewProductDialogContent from "./ViewProductDialogContent";
 
-type StoreItemProps = {
-  id: number;
-  name: string;
-  numTickets: number;
-  price: number;
-  stock: number;
-  imgUrl: string;
-};
-
-export default function ViewProductDialog(props: StoreItemProps) {
+export default function ViewProductDialog(props: StoreItemData) {
   return (
     <Dialog>
       <DialogTrigger asChild>

@@ -7,27 +7,25 @@ import AddAudienceDialog from "./AddAudienceDialog";
 import EditAudienceDialog from "./EditAudienceDialog";
 import { AlertDialog, AlertDialogTrigger } from "./(utils)/AlertDialog";
 import DeleteAlertDialogContent from "./DeleteAlertDialogContent";
-
-type StoreItemProps = {
-  id: number;
-  name: string;
-  numTickets: number;
-  price: number;
-  stock: number;
-  imgUrl: string;
-};
-
-export default function ViewProductDialogContent(props: StoreItemProps) {
+import { StoreItemData } from "../(types)/types";
+import Image from "next/image";
+export default function ViewProductDialogContent(props: StoreItemData) {
   const { getItemQuantity } = useShoppingCart();
 
   const quantity = getItemQuantity(props.id);
   return (
     <DialogContent className="p-0">
       <div className="flex flex-row mt-0 ">
-        <img
+        <Image
           className="w-2/5 h-80 object-cover rounded-l-lg"
+          width={0}
+          height={0}
+          unoptimized
           src={props.imgUrl}
           alt={props.name}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/images/store/ticket.png";
+          }}
         />
         <div className="flex flex-col justify-center px-5 w-3/5 h-full ">
           <Label className="font-bold text-xl">{props.name}</Label>

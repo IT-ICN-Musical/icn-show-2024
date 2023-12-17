@@ -14,16 +14,9 @@ import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import { Input } from "./(utils)/Input";
 import { Button } from "./(utils)/Button";
 import { Label } from "./(utils)/Label";
+import { StoreItemData } from "../(types)/types";
 
-type StoreItemProps = {
-  id: number;
-  name: string;
-  numTickets: number;
-  price: number;
-  imgUrl: string;
-};
-
-export default function AddAudienceDialog(props: StoreItemProps) {
+export default function AddAudienceDialog(props: StoreItemData) {
   const { getItemProducts, setItemProducts } = useShoppingCart();
   const [inputValues, setInputValues] = useState<string[]>([]);
   const [isEmptyInput, setIsEmptyInput] = useState(false);

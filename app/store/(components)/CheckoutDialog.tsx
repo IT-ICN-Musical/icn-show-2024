@@ -15,6 +15,9 @@ import { Label } from "./(utils)/Label";
 import { Input } from "./(utils)/Input";
 import { Button } from "./(utils)/Button";
 import { useShoppingCart } from "../(context)/ShoppingCartContext";
+import { API_URL } from "../(api)/constants";
+import { useData } from "../(context)/StoreDataContext";
+import { CartItem, StoreItemData } from "../(types)/types";
 
 export default function CheckoutDialog() {
   const { removeAllItems } = useShoppingCart();
@@ -25,7 +28,35 @@ export default function CheckoutDialog() {
   const [isWrongNameInput, setIsWrongNameInput] = useState(false);
   const [isWrongEmailInput, setIsWrongEmailInput] = useState(false);
   const [isWrongTelpInput, setIsWrongTelpInput] = useState(false);
-  const isCheckoutSuccess = true;
+  const { cartItems } = useShoppingCart();
+  const { data } = useData();
+
+  const extractAudienceNames = (
+    cartItems: CartItem[],
+    data: StoreItemData[] | undefined
+  ): Record<string, any>[] => {
+    const result: Record<string, any>[] = [];
+
+    cartItems.forEach((cartItem) => {
+      const matchingData = data?.find((item) => item.id === cartItem.id);
+
+      if (matchingData) {
+        cartItem.product.forEach((product) => {
+          product.audience.forEach((audience) => {
+            result.push({
+              audienceName: audience.name,
+              productId: matchingData.productId,
+              showTime: matchingData.showTime,
+            });
+          });
+        });
+      }
+    });
+
+    return result;
+  };
+
+  const result = extractAudienceNames(cartItems, data);
 
   const clearInput = () => {
     setBuyerName("");
@@ -33,7 +64,7 @@ export default function CheckoutDialog() {
     setBuyerTelp("");
   };
 
-  const handleCheckoutClick = () => {
+  const handleCheckoutClick = async () => {
     if (!buyerName || buyerName.trim() === "") {
       setIsWrongNameInput(true);
       return;
@@ -57,9 +88,32 @@ export default function CheckoutDialog() {
       setIsWrongTelpInput(false);
     }
 
-    isCheckoutSuccess
-      ? (removeAllItems(), console.log(buyerName, buyerEmail, buyerTelp))
-      : null;
+    try {
+      const response = await fetch(`${API_URL}/stripe/checkout`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          buyerName: buyerName,
+          buyerPhoneNumber: buyerTelp,
+          buyerEmail: buyerEmail,
+          orders: result,
+        }),
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        removeAllItems();
+        const sessionUrl = responseData.sessionUrl;
+        window.location.href = sessionUrl;
+      } else {
+        console.error("Checkout failed");
+      }
+    } catch (error) {
+      console.error("Error during checkout:", error);
+    }
+
     setIsDialogOpen(false);
   };
 
