@@ -44,7 +44,7 @@ export default function Tickets() {
                   Buy Tickets
                 </Button>
                 <Button
-                  url="https://www.youtube.com/ICNMusical"
+                  url="https://youtu.be/qTQoGTl3GN8"
                   animate="animate"
                   outsideURL={true}
                 >
