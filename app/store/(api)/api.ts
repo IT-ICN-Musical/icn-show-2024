@@ -24,6 +24,14 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       ? 5
       : 1;
 
+    const matineePrice = item.productName.toLowerCase().includes("bundle")
+      ? item.matineeTicketPriceSgd * numTickets
+      : item.matineeTicketPriceSgd;
+
+    const nightPrice = item.productName.toLowerCase().includes("bundle")
+      ? item.nightTicketPriceSgd * numTickets
+      : item.nightTicketPriceSgd;
+
     const matineeTicket: StoreItemData = {
       id: autoIncrementId++,
       productId: item.productId,
@@ -31,11 +39,12 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       description: `${item.productDescription} - Matinee`,
       startPeriod: item.startPeriodSgt,
       endPeriod: item.endPeriodSgt,
-      price: item.matineeTicketPriceSgd,
       stock: item.matineeTicketStock,
       imgUrl: `/images/store/${item.productName.toLowerCase()}_matinee.png`,
       isPromotion,
       numTickets,
+      showTime: "matinee",
+      price: matineePrice,
     };
 
     processedData.push(matineeTicket);
@@ -47,11 +56,12 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       description: `${item.productDescription} - Night`,
       startPeriod: item.startPeriodSgt,
       endPeriod: item.endPeriodSgt,
-      price: item.nightTicketPriceSgd,
       stock: item.nightTicketStock,
       imgUrl: `/images/store/${item.productName.toLowerCase()}_night.png`,
       isPromotion,
       numTickets,
+      showTime: "night",
+      price: nightPrice,
     };
 
     processedData.push(nightTicket);

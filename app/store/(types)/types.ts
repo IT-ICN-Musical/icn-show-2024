@@ -40,5 +40,6 @@ export type StoreItemData = {
   stock: number;
   imgUrl: string;
   isPromotion: boolean;
+  showTime: string;
   numTickets: number;
 };
