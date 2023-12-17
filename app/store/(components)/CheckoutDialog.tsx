@@ -18,6 +18,7 @@ import { useShoppingCart } from "../(context)/ShoppingCartContext";
 import { API_URL } from "../(api)/constants";
 import { useData } from "../(context)/StoreDataContext";
 import { CartItem, StoreItemData } from "../(types)/types";
+import { fetchData, preprocessData } from "../(api)/api";
 
 export default function CheckoutDialog() {
   const { removeAllItems } = useShoppingCart();
@@ -28,8 +29,23 @@ export default function CheckoutDialog() {
   const [isWrongNameInput, setIsWrongNameInput] = useState(false);
   const [isWrongEmailInput, setIsWrongEmailInput] = useState(false);
   const [isWrongTelpInput, setIsWrongTelpInput] = useState(false);
+  const [processedData, setProcessedData] = useState<StoreItemData[]>();
   const { cartItems } = useShoppingCart();
   const { data } = useData();
+
+  useEffect(() => {
+    const fetchDataAndProcess = async () => {
+      try {
+        const backendData = await fetchData();
+        const processedDataResult = preprocessData(backendData);
+        setProcessedData(processedDataResult);
+      } catch (error) {
+        console.error("Error fetching and processing data:", error);
+      }
+    };
+
+    fetchDataAndProcess();
+  }, []);
 
   const extractAudienceNames = (
     cartItems: CartItem[],
@@ -43,11 +59,21 @@ export default function CheckoutDialog() {
       if (matchingData) {
         cartItem.product.forEach((product) => {
           product.audience.forEach((audience) => {
-            result.push({
-              audienceName: audience.name,
-              productId: matchingData.productId,
-              showTime: matchingData.showTime,
-            });
+            const productId = matchingData.productId;
+            const showTime = matchingData.showTime;
+
+            const isProductInBackend = processedData?.some(
+              (processedItem) =>
+                processedItem.productId === productId && processedItem.stock > 0
+            );
+
+            if (isProductInBackend) {
+              result.push({
+                audienceName: audience.name,
+                productId: productId,
+                showTime: showTime,
+              });
+            }
           });
         });
       }
@@ -104,12 +130,13 @@ export default function CheckoutDialog() {
 
       if (response.ok) {
         const responseData = await response.json();
-        removeAllItems();
+
         const sessionUrl = responseData.sessionUrl;
         window.location.href = sessionUrl;
       } else {
         console.error("Checkout failed");
       }
+      removeAllItems();
     } catch (error) {
       console.error("Error during checkout:", error);
     }
@@ -131,7 +158,7 @@ export default function CheckoutDialog() {
           <DialogTitle className="pb-1 text-xl">Buyer Information</DialogTitle>
           <DialogDescription>
             This will be used to send the tickets. Please make sure the
-            information here are correct.
+            information here are correct and double-check items in Payment Page.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-2">
