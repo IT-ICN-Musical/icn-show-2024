@@ -130,7 +130,6 @@ export default function CheckoutDialog() {
 
       if (response.ok) {
         const responseData = await response.json();
-
         const sessionUrl = responseData.sessionUrl;
         window.location.href = sessionUrl;
       } else {
@@ -139,6 +138,7 @@ export default function CheckoutDialog() {
       removeAllItems();
     } catch (error) {
       console.error("Error during checkout:", error);
+      removeAllItems();
     }
 
     setIsDialogOpen(false);
