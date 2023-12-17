@@ -5,6 +5,7 @@ import Footer from "../(components)/Footer";
 import Navbar from "../(components)/Navbar";
 import { useData } from "./(context)/StoreDataContext";
 import { fetchData, preprocessData } from "./(api)/api";
+import { BackstageItem } from "./(components)/BackstageItem";
 
 const Page: React.FC = () => {
   const { data, setData } = useData();
@@ -37,9 +38,11 @@ const Page: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="mt-10 font-bold text-4xl mb-6 text-center lg:text-left px-10 xl:px-0">
-                Promotions
-              </div>
+              {data?.some((item) => item.isPromotion) && (
+                <div className="mt-10 font-bold text-4xl mb-6 text-center lg:text-left px-10 xl:px-0">
+                  Promotions
+                </div>
+              )}
               <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4 md:px-10 xl:px-0">
                 {data?.map(
                   (item) =>
@@ -68,6 +71,9 @@ const Page: React.FC = () => {
                       </div>
                     )
                 )}
+                <div className="flex flex-col justify-center items-center">
+                  <BackstageItem />
+                </div>
               </div>
             </>
           )}
