@@ -27,13 +27,16 @@ export default function Tickets() {
               <div className="flex flex-start align-start gap-[24px]">
                 <BsFillCalendarWeekFill size={20} />
                 <div className="py-[0px]">
-                  <p className="font-[600]">February 1, 2024</p>
+                  <p className="font-[600]">February 3, 2024</p>
                 </div>
               </div>
               <div className="flex flex-start align-start gap-[24px]">
                 <FaClock size={20} />
                 <div className="py-[0px]">
-                  <p className="font-[600]">15:00 - 19:00</p>
+                  <p className="font-[600]">Matinee&nbsp; 14.00 - 16.45 SGT</p>
+                  <p className="font-[600]">
+                    Night&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19.00 - 21.45 SGT
+                  </p>
                 </div>
               </div>
               <div className="flex flex-start justify-center gap-[1rem]">

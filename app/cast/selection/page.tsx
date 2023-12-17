@@ -224,7 +224,7 @@ export default function CastSelectionPage() {
             carouselShrinked ? "z-20" : "z-10"
           }`}
         >
-          <ScrollArea className="h-full">
+          <ScrollArea className="h-full bg-gray-600 bg-opacity-50 rounded-xl p-4">
             <p className="text-xs sm:text-base">{cast[selectedIndex].desc}</p>
           </ScrollArea>
         </motion.div>
