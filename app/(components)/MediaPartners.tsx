@@ -20,7 +20,6 @@ export default function MediaPartners() {
   const images = [
     "Danamic.png",
     "INews.png",
-    "SEN.png",
     "Sun Media.png",
     "WakeUpSG.jpg",
   ] as const;
