@@ -14,7 +14,6 @@ export const fetchData = async (): Promise<BackendData[]> => {
 
 export const preprocessData = (data: BackendData[]): StoreItemData[] => {
   const processedData: StoreItemData[] = [];
-  let autoIncrementId = 1;
 
   data.forEach((item) => {
     const isPromotion = !/normal|single/i.test(item.productName);
@@ -40,7 +39,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
       : item.nightTicketStock;
 
     const matineeTicket: StoreItemData = {
-      id: autoIncrementId++,
+      id: item.productId * 10,
       productId: item.productId,
       name: `${item.productName} - Matinee`,
       description: `${item.productDescription}`,
@@ -58,7 +57,7 @@ export const preprocessData = (data: BackendData[]): StoreItemData[] => {
     processedData.push(matineeTicket);
 
     const nightTicket: StoreItemData = {
-      id: autoIncrementId++,
+      id: item.productId * 10 + 1,
       productId: item.productId,
       name: `${item.productName} - Night`,
       description: `${item.productDescription}`,

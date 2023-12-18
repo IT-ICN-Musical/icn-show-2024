@@ -6,9 +6,11 @@ import Navbar from "../(components)/Navbar";
 import { useData } from "./(context)/StoreDataContext";
 import { fetchData, preprocessData } from "./(api)/api";
 import { BackstageItem } from "./(components)/BackstageItem";
+import { useShoppingCart } from "./(context)/ShoppingCartContext";
 
 const Page: React.FC = () => {
   const { data, setData } = useData();
+  const { cartItems, removeFromCart } = useShoppingCart();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,6 +18,16 @@ const Page: React.FC = () => {
       try {
         const backendData = await fetchData();
         const processedData = preprocessData(backendData);
+
+        cartItems.forEach((cartItem) => {
+          const isAvailable = processedData?.some(
+            (itemData) => itemData.id === cartItem.id
+          );
+          if (!isAvailable) {
+            removeFromCart(cartItem.id);
+          }
+        });
+
         setData(processedData);
         setLoading(false);
       } catch (error) {
@@ -25,7 +37,7 @@ const Page: React.FC = () => {
     };
 
     fetchDataAndProcess();
-  }, [setData]);
+  }, [setData, cartItems]);
 
   return (
     <main className="bg-[url('/batik-betawi.png')] min-h-screen bg-cover bg-center flex flex-col justify-between">
