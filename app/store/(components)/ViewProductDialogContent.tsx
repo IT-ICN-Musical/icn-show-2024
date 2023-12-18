@@ -60,7 +60,6 @@ export default function ViewProductDialogContent(props: StoreItemData) {
 
         setItemProducts(userItem.id, userItem.product);
     };
-
     const handleDeleteProduct = (productIndex: number) => {
         const updatedAudienceNames = [...audienceNames];
         updatedAudienceNames.splice(productIndex, 1);
@@ -93,6 +92,7 @@ export default function ViewProductDialogContent(props: StoreItemData) {
                         <Label className="my-0 md:text-lg py-1 sm:text-md">
                             Ends on: {formattedDate} SGT
                         </Label>
+
                         <Label className="my-0 md:text-lg sm:text-md">
                             Stock Left: {props.stock}
                             <span className="mx-1 text-base lg:text-lg font-semibold">
@@ -120,8 +120,8 @@ export default function ViewProductDialogContent(props: StoreItemData) {
                                                 key={productIndex}
                                                 className="flex flex-col mb-5 justify-center text-center"
                                             >
-                                                <div className="flex justify-center items-center ml-5 text-center">
-                                                    <Label className="font-cold text-xl my-2 mr-4">
+                                                <div className="flex justify-center items-center ml-5 text-center space-x-[50px]">
+                                                    <Label className="font-cold text-xl my-2 mx-2">
                                                         {`${
                                                             props.name
                                                                 .toLowerCase()
@@ -151,7 +151,7 @@ export default function ViewProductDialogContent(props: StoreItemData) {
                                                     <Input
                                                         key={ticketIndex}
                                                         placeholder={`Enter name`}
-                                                        className="w-full my-1"
+                                                        className="w-full my-1 mx-2"
                                                         value={
                                                             audienceNameForProduct[
                                                                 ticketIndex
