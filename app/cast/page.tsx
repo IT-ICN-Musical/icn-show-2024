@@ -67,6 +67,8 @@ export default function CastPage() {
                   alt={image.text}
                   className={`${image.className} object-center object-cover`}
                   fill
+                  priority={true}
+                  loading="eager"
                 />
               </div>
             );
@@ -106,6 +108,8 @@ export default function CastPage() {
                     fill
                     sizes="100%"
                     className="opacity-70 object-cover"
+                    priority={true}
+                    loading="eager"
                   />
                   <div
                     className={clsx(
