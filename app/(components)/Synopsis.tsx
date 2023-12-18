@@ -110,7 +110,7 @@ export default function Synopsis() {
       </div>
       <div className="w-[100%] h-fit md:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
         <div className="w-[1000px] flex flex-col space-y-[40px]">
-          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold mx-10">
             Platinum Sponsors
           </p>
           <PlatinumSponsors />
@@ -118,7 +118,7 @@ export default function Synopsis() {
       </div>
       <div className="w-[100%] h-fit md:h-screen flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
         <div className="w-[1000px] flex flex-col space-y-[40px]">
-          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold mx-10">
             Gold Sponsors
           </p>
           <GoldSponsors />
@@ -126,7 +126,7 @@ export default function Synopsis() {
       </div>
       <div className="w-[100%] h-fit md:h-[60vh] flex justify-center items-center mt-10 pb-10 sm:pb-0 sm:mt-0">
         <div className="w-[850px] flex flex-col space-y-[40px]">
-          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold mx-10">
             Supported By
           </p>
           <Supported_by />
@@ -134,7 +134,7 @@ export default function Synopsis() {
       </div>
       <div className="w-[100%] h-fit md:h-[60vh] flex justify-center items-center mt-10 pb-10 md:pb-0 md:mt-0">
         <div className="w-[850px] flex flex-col space-y-[40px]">
-          <p className="font-gyahegi text-body text-[32px] text-center font-bold">
+          <p className="font-gyahegi text-body text-[32px] text-center font-bold mx-10">
             Media Partners
           </p>
           <MediaPartners />
