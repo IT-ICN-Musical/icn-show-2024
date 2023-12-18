@@ -151,7 +151,7 @@ export default function ViewProductDialogContent(props: StoreItemData) {
                                                     <Input
                                                         key={ticketIndex}
                                                         placeholder={`Enter name`}
-                                                        className="w-full my-1"
+                                                        className="w-full my-1 mx-2"
                                                         value={
                                                             audienceNameForProduct[
                                                                 ticketIndex
