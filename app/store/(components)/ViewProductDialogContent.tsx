@@ -13,15 +13,17 @@ import { useEffect, useState } from "react";
 
 interface ViewProductDialogContentProps extends StoreItemData {
   open: boolean;
+  onClose: () => void;
 }
 
-export default function ViewProductDialogContent(
-  props: ViewProductDialogContentProps
-) {
-  const { getItemQuantity, getItemProducts, setItemProducts } =
-    useShoppingCart();
+export default function ViewProductDialogContent({
+  open,
+  onClose,
+  ...props
+}: ViewProductDialogContentProps) {
+  const { getItemProducts, setItemProducts } = useShoppingCart();
   const formattedDate = new Date(props.endPeriod).toLocaleString();
-  const quantity = getItemQuantity(props.id);
+
   const [audienceNames, setAudienceNames] = useState<string[][]>(
     Array.from({ length: 0 }, () => [])
   );
@@ -48,7 +50,7 @@ export default function ViewProductDialogContent(
       );
       setAudienceNames(initialAudienceNames);
     }
-  }, [getItemProducts, props.id, props.open]);
+  }, [getItemProducts, props.id, open]);
 
   const saveAndClose = () => {
     if (
@@ -58,7 +60,6 @@ export default function ViewProductDialogContent(
           productNames.length !== props.numTickets
       )
     ) {
-      // If there are issues, alert the user or handle it as needed
       alert(
         "Please fill in all audience names and ensure the correct number of names before saving."
       );
@@ -76,6 +77,7 @@ export default function ViewProductDialogContent(
       })),
     };
     setItemProducts(userItem.id, userItem.product);
+    onClose();
   };
 
   const handleDeleteProduct = (productIndex: number) => {
@@ -182,20 +184,20 @@ export default function ViewProductDialogContent(
               <div className="flex flex-row justify-end items-end">
                 {audienceNames.length > 0 ? (
                   <div className="flex justify-end">
-                    <AlertDialog>
-                      <AlertDialogTrigger asChild>
-                        <Button variant="destructive">Delete All</Button>
-                      </AlertDialogTrigger>
-                      <DeleteAlertDialogContent id={props.id} />
-                    </AlertDialog>
+                    <DialogClose asChild>
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button variant="destructive">Delete All</Button>
+                        </AlertDialogTrigger>
+                        <DeleteAlertDialogContent id={props.id} />
+                      </AlertDialog>
+                    </DialogClose>
                   </div>
                 ) : null}
               </div>
-              <DialogClose asChild>
-                <Button className="rounded mx-2" onClick={saveAndClose}>
-                  Save and Close
-                </Button>
-              </DialogClose>
+              <Button className="rounded mx-2" onClick={saveAndClose}>
+                Save and Close
+              </Button>
             </div>
           </div>
         </div>
