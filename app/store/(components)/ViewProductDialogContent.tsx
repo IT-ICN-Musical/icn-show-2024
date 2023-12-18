@@ -24,7 +24,37 @@ export default function ViewProductDialogContent({
   ...props
 }: ViewProductDialogContentProps) {
   const { getItemProducts, setItemProducts } = useShoppingCart();
-  const formattedDate = new Date(props.endPeriod).toLocaleString();
+  function formatDate(date: string): string {
+    const dateObject = new Date(date);
+
+    if (isNaN(dateObject.getTime())) {
+      // Handle invalid date input
+      return "Invalid Date";
+    }
+
+    const day = dateObject.getDate().toString().padStart(2, "0");
+    const monthIndex = dateObject.getMonth();
+    const year = dateObject.getFullYear();
+
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const month = months[monthIndex];
+
+    return `${day} ${month} ${year}`;
+  }
 
   const [audienceNames, setAudienceNames] = useState<string[][]>(
     Array.from({ length: 0 }, () => [])
@@ -112,23 +142,28 @@ export default function ViewProductDialogContent({
             </Label>
             <div className="flex flex-row items-center">
               <FaCalendarDays size={15} />
-              <Label className="my-0 text-lg lg:text-xl py-1">
+              <Label className="ml-2 my-0 text-lg lg:text-lg">
                 {props.timing}
               </Label>
             </div>
 
-            <Separator />
-            <Label className="my-0 text-lg lg:text-xl py-1">
-              Sale Ends on: {formattedDate} SGT
-            </Label>
+            <Separator className="my-2" />
 
-            <Label className="my-0 text-lg lg:text-xl">
+            <Label className="my-0 text-lg lg:text-lg">
               Stock Left: {props.stock}
               <span className="mx-1 text-base lg:text-lg font-semibold">
                 |
               </span>{" "}
               Quantity: {audienceNames.length}
             </Label>
+            <Label className="my-0 text-lg lg:text-lg py-1">
+              Sale Ends on: {formatDate(props.endPeriod)} SGT
+            </Label>
+            <div className="text-xs my-1 italic">
+              *Kindly make sure to click{" "}
+              <span className="font-bold">Save and Close</span> to save your
+              changes.
+            </div>
           </div>
         </div>
 
@@ -190,6 +225,7 @@ export default function ViewProductDialogContent({
             <Button className="rounded mx-2 my-2" onClick={addProduct}>
               Add Quantity
             </Button>
+
             <div className="flex items-end justify-end my-2">
               <div className="flex flex-row justify-end items-end">
                 {audienceNames.length > 0 ? (
