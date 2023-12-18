@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StoreItemData } from "../(types)/types";
 import { Button } from "./(utils)/Button";
 import { Dialog, DialogTrigger } from "./(utils)/Dialog";
@@ -5,12 +6,14 @@ import { Dialog, DialogTrigger } from "./(utils)/Dialog";
 import ViewProductDialogContent from "./ViewProductDialogContent";
 
 export default function ViewProductDialog(props: StoreItemData) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>See More</Button>
       </DialogTrigger>
-      <ViewProductDialogContent {...props} />
+      <ViewProductDialogContent {...props} open={open} />
     </Dialog>
   );
 }

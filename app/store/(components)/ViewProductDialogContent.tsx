@@ -11,7 +11,13 @@ import { ScrollArea } from "./(utils)/ScrollArea";
 import { Input } from "./(utils)/Input";
 import { useEffect, useState } from "react";
 
-export default function ViewProductDialogContent(props: StoreItemData) {
+interface ViewProductDialogContentProps extends StoreItemData {
+  open: boolean;
+}
+
+export default function ViewProductDialogContent(
+  props: ViewProductDialogContentProps
+) {
   const { getItemQuantity, getItemProducts, setItemProducts } =
     useShoppingCart();
   const formattedDate = new Date(props.endPeriod).toLocaleString();
@@ -42,9 +48,23 @@ export default function ViewProductDialogContent(props: StoreItemData) {
       );
       setAudienceNames(initialAudienceNames);
     }
-  }, [getItemProducts, props.id]);
+  }, [getItemProducts, props.id, props.open]);
 
   const saveAndClose = () => {
+    if (
+      audienceNames.some(
+        (productNames) =>
+          productNames.some((name) => !name.trim()) ||
+          productNames.length !== props.numTickets
+      )
+    ) {
+      // If there are issues, alert the user or handle it as needed
+      alert(
+        "Please fill in all audience names and ensure the correct number of names before saving."
+      );
+      return;
+    }
+
     const userItem: CartItem = {
       id: props.id,
       product: audienceNames.map((audienceNamesForProduct, index) => ({
@@ -55,7 +75,6 @@ export default function ViewProductDialogContent(props: StoreItemData) {
         })),
       })),
     };
-    console.log(userItem);
     setItemProducts(userItem.id, userItem.product);
   };
 
