@@ -24,7 +24,7 @@ export default function Supported_by() {
     "PINTU Logo.png",
     "Dolanesia.png",
     "Stalks and Petals.png",
-    "Trendink-logo-Colour.png",
+    // "Trendink-logo-Colour.png",
   ] as const;
 
   return (
