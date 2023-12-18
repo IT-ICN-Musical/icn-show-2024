@@ -42,7 +42,7 @@ export default function EmblaThumb({
       type="button"
     >
       {selected && !shrinked && (
-        <div className="fixed top-[45%] text-white font-semibold font-gyahegi text-[12px]">
+        <div className="fixed top-[45%] text-white font-semibold font-gyahegi text-[12px] flex flex-wrap">
           Double Click to See More
         </div>
       )}
