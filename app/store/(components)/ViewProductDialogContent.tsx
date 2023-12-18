@@ -10,6 +10,8 @@ import Image from "next/image";
 import { ScrollArea } from "./(utils)/ScrollArea";
 import { Input } from "./(utils)/Input";
 import { useEffect, useState } from "react";
+import { FaCalendarDays } from "react-icons/fa6";
+import { Separator } from "./(utils)/Separator";
 
 interface ViewProductDialogContentProps extends StoreItemData {
   open: boolean;
@@ -108,8 +110,16 @@ export default function ViewProductDialogContent({
             <Label className="my-0 text-base lg:text-lg py-1">
               {props.description}
             </Label>
+            <div className="flex flex-row items-center">
+              <FaCalendarDays size={15} />
+              <Label className="my-0 text-lg lg:text-xl py-1">
+                {props.timing}
+              </Label>
+            </div>
+
+            <Separator />
             <Label className="my-0 text-lg lg:text-xl py-1">
-              Ends on: {formattedDate} SGT
+              Sale Ends on: {formattedDate} SGT
             </Label>
 
             <Label className="my-0 text-lg lg:text-xl">
