@@ -142,26 +142,22 @@ export default function ViewProductDialogContent({
             <Label className="font-bold text-3xl lg:text-4xl">
               {props.name}
             </Label>
-            <Label className="my-0 text-base lg:text-lg py-1">
-              {props.description}
-            </Label>
-            <div className="flex flex-row items-center">
+            <Label className="my-0 text-base py-2">{props.description}</Label>
+            <div className="flex flex-row items-center px-0.5">
               <FaCalendarDays size={15} />
-              <Label className="ml-2 my-0 text-lg lg:text-lg">
-                {props.timing}
-              </Label>
+              <Label className="ml-2 my-0 text-base">{props.timing}</Label>
             </div>
 
             <Separator className="my-2" />
 
-            <Label className="my-0 text-lg lg:text-lg">
+            <Label className="my-0 text-base">
               Stock Left: {props.stock}
               <span className="mx-1 text-base lg:text-lg font-semibold">
                 |
               </span>{" "}
               Quantity Ordered: {audienceNames.length}
             </Label>
-            <Label className="my-0 text-lg lg:text-lg py-1">
+            <Label className="my-0 text-base py-1">
               Sale Ends on: {formatDate(props.endPeriod)} SGT
             </Label>
             <div className="text-xs my-1 italic">
@@ -241,6 +237,7 @@ export default function ViewProductDialogContent({
             <Button
               className={"rounded mx-2 my-2"}
               onClick={addProduct}
+              variant="secondary"
               disabled={audienceNames.length >= props.stock}
             >
               {audienceNames.length >= props.stock
