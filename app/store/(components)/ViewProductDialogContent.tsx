@@ -174,7 +174,7 @@ export default function ViewProductDialogContent({
             </Label>
             <ScrollArea className="max-h-[75%] pb-7">
               {audienceNames.length > 0 ? (
-                <div>
+                <div className="w-11/12">
                   {audienceNames.map((audienceNameForProduct, productIndex) => (
                     <div
                       key={productIndex}
