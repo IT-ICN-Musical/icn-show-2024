@@ -24,6 +24,7 @@ export default function ViewProductDialogContent({
   ...props
 }: ViewProductDialogContentProps) {
   const { getItemProducts, setItemProducts } = useShoppingCart();
+  const [isEmptyInput, setIsEmptyInput] = useState(false);
   function formatDate(date: string): string {
     const dateObject = new Date(date);
 
@@ -84,6 +85,12 @@ export default function ViewProductDialogContent({
     }
   }, [getItemProducts, props.id, open]);
 
+  useEffect(() => {
+    if (!open) {
+      setIsEmptyInput(false);
+    }
+  }, [open]);
+
   const saveAndClose = () => {
     if (
       audienceNames.some(
@@ -92,9 +99,7 @@ export default function ViewProductDialogContent({
           productNames.length !== props.numTickets
       )
     ) {
-      alert(
-        "Please fill in all audience names and ensure the correct number of names before saving."
-      );
+      setIsEmptyInput(true);
       return;
     }
 
@@ -170,7 +175,7 @@ export default function ViewProductDialogContent({
         <div className="flex flex-col px-5 w-full lg:w-3/5 h-full lg:py-10 py-0 justify-between">
           <div className="flex flex-col justify-center max-h-[60vh] min-h-[15vh] lg:h-[60vh]">
             <Label className="font-semibold sm:text-md lg:text-lg  mt-[20px] mb-[10px] px-2 text-center">
-              Your tickets for {props.name}
+              Your Tickets for {props.name}
             </Label>
             <ScrollArea className="max-h-[75%] pb-7">
               {audienceNames.length > 0 ? (
@@ -225,11 +230,22 @@ export default function ViewProductDialogContent({
                 </p>
               )}
             </ScrollArea>
+            {isEmptyInput && (
+              <p className="text-red-500 mb-1">
+                Warning: Please fill in all input boxes before closing.
+              </p>
+            )}
           </div>
 
           <div className="flex flex-end flex-col items-end justify-end">
-            <Button className="rounded mx-2 my-2" onClick={addProduct}>
-              Add Tickets
+            <Button
+              className={"rounded mx-2 my-2"}
+              onClick={addProduct}
+              disabled={audienceNames.length >= props.stock}
+            >
+              {audienceNames.length >= props.stock
+                ? "No Item Available"
+                : "Add Tickets"}
             </Button>
 
             <div className="flex items-end justify-end my-2">
