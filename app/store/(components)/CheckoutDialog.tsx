@@ -71,8 +71,6 @@ export default function CheckoutDialog() {
             );
 
             if (isProductInBackend) {
-              // console.log(processedData);
-              // console.log(cartItem.id, cartItem.product.length);
               result.push({
                 audienceName: audience.name,
                 productId: productId,
