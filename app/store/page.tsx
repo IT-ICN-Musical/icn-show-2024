@@ -21,7 +21,9 @@ const Page: React.FC = () => {
 
         cartItems.forEach((cartItem) => {
           const isAvailable = processedData?.some(
-            (itemData) => itemData.id === cartItem.id
+            (itemData) =>
+              itemData.id === cartItem.id &&
+              itemData.stock >= cartItem.product.length
           );
           if (!isAvailable) {
             removeFromCart(cartItem.id);

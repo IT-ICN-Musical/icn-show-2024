@@ -123,7 +123,7 @@ export default function CheckoutDialog() {
 
     if (!isEveryProductInBackend) {
       const userConfirmed = window.confirm(
-        "Products (name of product) xquantity will be removed from the cart because the quantity available is not enough. Do you want to proceed with the checkout anyway?"
+        "Some products are unavailable and will be removed from the cart. Please check again the products purchased in the Payment Page."
       );
 
       if (!userConfirmed) {
