@@ -29,6 +29,7 @@ export default function CheckoutDialog() {
   const [isWrongNameInput, setIsWrongNameInput] = useState(false);
   const [isWrongEmailInput, setIsWrongEmailInput] = useState(false);
   const [isWrongTelpInput, setIsWrongTelpInput] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [processedData, setProcessedData] = useState<StoreItemData[]>();
   const { cartItems } = useShoppingCart();
   const { data } = useData();
@@ -130,9 +131,8 @@ export default function CheckoutDialog() {
       }
     }
 
-    setIsDialogOpen(false);
-
     try {
+      setIsLoading(true);
       const response = await fetch(`${API_URL}/stripe/checkout`, {
         method: "POST",
         headers: {
@@ -156,14 +156,15 @@ export default function CheckoutDialog() {
         );
         console.log("Checkout failed");
       }
-      removeAllItems();
     } catch (error) {
       window.alert(
         "There is an error on the checkout. Please try again later!"
       );
       console.log("Error during checkout:");
-      removeAllItems();
     }
+    setIsLoading(false);
+    setIsDialogOpen(false);
+    removeAllItems();
   };
 
   useEffect(() => {
@@ -247,7 +248,9 @@ export default function CheckoutDialog() {
           <DialogClose asChild>
             <Button variant="outline">Cancel</Button>
           </DialogClose>
-          <Button onClick={handleCheckoutClick}>Proceed to Payment</Button>
+          <Button onClick={handleCheckoutClick} disabled={isLoading}>
+            {isLoading ? "Loading..." : "Proceed to Payment"}
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
