@@ -238,6 +238,10 @@ export default function CheckoutDialog() {
               Warning: Please ensure the telephone number format is correct.
             </p>
           )}
+          <p className="text-black text-xs mb-1">
+            *Note: Please wait for a few seconds to be redirected to Payment
+            Page
+          </p>
         </div>
         <DialogFooter>
           <DialogClose asChild>
