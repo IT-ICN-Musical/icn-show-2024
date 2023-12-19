@@ -148,6 +148,7 @@ export default function CheckoutDialog() {
         const responseData = await response.json();
         const sessionUrl = responseData.sessionUrl;
         window.location.href = sessionUrl;
+        setIsDialogOpen(false);
       } else {
         window.alert(
           "There is an error on the checkout. Please try again later!"
