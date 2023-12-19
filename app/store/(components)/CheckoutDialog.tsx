@@ -130,6 +130,8 @@ export default function CheckoutDialog() {
       }
     }
 
+    setIsDialogOpen(false);
+
     try {
       const response = await fetch(`${API_URL}/stripe/checkout`, {
         method: "POST",
@@ -145,7 +147,6 @@ export default function CheckoutDialog() {
       });
 
       if (response.ok) {
-        setIsDialogOpen(false);
         const responseData = await response.json();
         const sessionUrl = responseData.sessionUrl;
         window.location.href = sessionUrl;
@@ -163,8 +164,6 @@ export default function CheckoutDialog() {
       console.log("Error during checkout:");
       removeAllItems();
     }
-
-    setIsDialogOpen(false);
   };
 
   useEffect(() => {
