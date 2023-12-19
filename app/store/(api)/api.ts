@@ -7,7 +7,7 @@ export const fetchData = async (): Promise<BackendData[]> => {
     const backendData: BackendData[] = await response.json();
     return backendData;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.log("Error fetching data");
     throw error;
   }
 };

@@ -31,7 +31,7 @@ const Page: React.FC = () => {
         setData(processedData);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching and processing data:", error);
+        console.log("Error fetching and processing data:");
         setLoading(false);
       }
     };
