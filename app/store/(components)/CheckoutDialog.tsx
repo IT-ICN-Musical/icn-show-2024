@@ -246,7 +246,9 @@ export default function CheckoutDialog() {
         </div>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline" disabled={isLoading}>
+              Cancel
+            </Button>
           </DialogClose>
           <Button onClick={handleCheckoutClick} disabled={isLoading}>
             {isLoading ? "Loading..." : "Proceed to Payment"}
