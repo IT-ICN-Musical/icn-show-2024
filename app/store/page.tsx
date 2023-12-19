@@ -21,7 +21,9 @@ const Page: React.FC = () => {
 
         cartItems.forEach((cartItem) => {
           const isAvailable = processedData?.some(
-            (itemData) => itemData.id === cartItem.id
+            (itemData) =>
+              itemData.id === cartItem.id &&
+              itemData.stock >= cartItem.product.length
           );
           if (!isAvailable) {
             removeFromCart(cartItem.id);
@@ -31,7 +33,7 @@ const Page: React.FC = () => {
         setData(processedData);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching and processing data:", error);
+        console.log("Error fetching and processing data:");
         setLoading(false);
       }
     };

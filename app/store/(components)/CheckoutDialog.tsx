@@ -40,12 +40,14 @@ export default function CheckoutDialog() {
         const processedDataResult = preprocessData(backendData);
         setProcessedData(processedDataResult);
       } catch (error) {
-        console.error("Error fetching and processing data:", error);
+        console.log("Error fetching and processing data");
       }
     };
 
     fetchDataAndProcess();
-  }, []);
+  }, [isDialogOpen]);
+
+  let isEveryProductInBackend = true;
 
   const extractAudienceNames = (
     cartItems: CartItem[],
@@ -64,7 +66,8 @@ export default function CheckoutDialog() {
 
             const isProductInBackend = processedData?.some(
               (processedItem) =>
-                processedItem.productId === productId && processedItem.stock > 0
+                processedItem.productId === productId &&
+                processedItem.stock >= cartItem.product.length
             );
 
             if (isProductInBackend) {
@@ -73,6 +76,8 @@ export default function CheckoutDialog() {
                 productId: productId,
                 showTime: showTime,
               });
+            } else {
+              isEveryProductInBackend = false;
             }
           });
         });
@@ -114,6 +119,17 @@ export default function CheckoutDialog() {
       setIsWrongTelpInput(false);
     }
 
+    if (!isEveryProductInBackend) {
+      const userConfirmed = window.confirm(
+        "Some products are unavailable and will be removed from the cart. Please check again the products purchased in the Payment Page."
+      );
+
+      if (!userConfirmed) {
+        removeAllItems();
+        return;
+      }
+    }
+
     try {
       const response = await fetch(`${API_URL}/stripe/checkout`, {
         method: "POST",
@@ -133,11 +149,17 @@ export default function CheckoutDialog() {
         const sessionUrl = responseData.sessionUrl;
         window.location.href = sessionUrl;
       } else {
-        console.error("Checkout failed");
+        window.alert(
+          "There is an error on the checkout. Please try again later!"
+        );
+        console.log("Checkout failed");
       }
       removeAllItems();
     } catch (error) {
-      console.error("Error during checkout:", error);
+      window.alert(
+        "There is an error on the checkout. Please try again later!"
+      );
+      console.log("Error during checkout:");
       removeAllItems();
     }
 
