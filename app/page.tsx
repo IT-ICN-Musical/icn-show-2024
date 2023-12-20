@@ -17,6 +17,10 @@ export default function Home() {
     }
   }, [scrollable]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="overflow-hidden">
       <Navbar attribute="home" scrollable={scrollable} />
@@ -26,7 +30,7 @@ export default function Home() {
         setOpenWindow={setIsOpen}
         setScrollable={setScrollable}
       />
-      <LandingPageContent />
+      {scrollable ? <LandingPageContent /> : null}
     </main>
   );
 }
