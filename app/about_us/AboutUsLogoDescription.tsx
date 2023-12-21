@@ -19,6 +19,7 @@ export default function AboutUsLogoDescription() {
                     width={550}
                     height={0}
                     className="px-10"
+                    priority={true}
                   />
                 </div>
               </div>
