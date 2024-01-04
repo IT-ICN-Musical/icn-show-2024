@@ -15,6 +15,9 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ICN 2024 Musical: Kaharsa",
   description: "Buy your tickets here",
+  keywords:
+    "ICN, ICN Musical, Indonesia Cultural Night, NTU, ICN NTU, Indonesia Cultural Night NTU, NTU Indonesia",
+  applicationName: "Show ICN 2024",
 };
 
 export default function RootLayout({
