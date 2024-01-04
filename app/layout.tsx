@@ -10,6 +10,15 @@ const gyahegi = localFont({
   variable: "--font-gyahegi",
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ICN 2024 Musical: Kaharsa",
+  alternateName: ["ICN", "ICN Musical"],
+  url: "https://www.show.icnmusical.com/",
+  description: "Buy your tickets here",
+};
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -54,6 +63,10 @@ export default function RootLayout({
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
