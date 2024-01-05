@@ -8,6 +8,8 @@ RUN npm install --production
 
 COPY . .
 
+RUN npm i sharp
+
 RUN npm run build
 
 EXPOSE 3000
