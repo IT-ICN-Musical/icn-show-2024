@@ -13,8 +13,8 @@ const gyahegi = localFont({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "ICN Musical",
-  alternateName: ["ICN", "ICN 2024 Musical: Kaharsa", "Kaharsa"],
+  name: "Show ICN Musical",
+  alternateName: ["ICN", "ICN Musical", "ICN 2024 Musical: Kaharsa", "Kaharsa"],
   url: "https://www.show.icnmusical.com/",
   description: "Buy your tickets here",
 };
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description: "Buy your tickets here",
   keywords:
     "ICN, ICN Musical, Indonesia Cultural Night, NTU, ICN NTU, Indonesia Cultural Night NTU, NTU Indonesia",
-  applicationName: "Show ICN 2024",
+  applicationName: "Show ICN Musical",
 };
 
 export default function RootLayout({
