@@ -13,8 +13,8 @@ const gyahegi = localFont({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "ICN 2024 Musical: Kaharsa",
-  alternateName: ["ICN", "ICN Musical"],
+  name: "ICN Musical",
+  alternateName: ["ICN", "ICN 2024 Musical: Kaharsa", "Kaharsa"],
   url: "https://www.show.icnmusical.com/",
   description: "Buy your tickets here",
 };
