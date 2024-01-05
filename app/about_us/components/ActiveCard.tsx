@@ -12,7 +12,7 @@ export default function ActiveCard(props: ActiveCardProps) {
       href={`/about_us/${props.name}`.toLowerCase()}
       className=" w-[100%] flex justify-center"
     >
-      <button className="relative flex w-[75%] md:w-[90%] xl:w-[75%] min-h-[110px] bg-white rounded-2xl pl-[10%] pr-[7%] drop-shadow-md items-center justify-between overflow-hidden">
+      <button className="relative flex w-[90%] sm:w-[75%] md:w-[90%] xl:w-[75%] min-h-[110px] bg-white rounded-2xl pl-[10%] pr-[7%] drop-shadow-md items-center justify-between overflow-hidden">
         <Image
           className="object-cover absolute"
           style={{
