@@ -6,10 +6,10 @@ import instagram from "../../public/images/footer/ig-button.png";
 import facebook from "../../public/images/footer/facebook-button.png";
 import youtube from "../../public/images/footer/youtube-button.png";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "../store/(components)/(utils)/HoverCard";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../store/(components)/(utils)/Popover";
 import Link from "next/link";
 
 export default function Footer() {
@@ -46,13 +46,13 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <HoverCard>
-          <HoverCardTrigger asChild>
+        <Popover>
+          <PopoverTrigger asChild>
             <div className="flex rounded-lg border border-white text-white font-montserrat shadow-lg w-36 h-9 items-center justify-center transition duration-300 ease-in-out hover:bg-white hover:text-black text-xs sm:text-sm">
               Contact Us
             </div>
-          </HoverCardTrigger>
-          <HoverCardContent align="start" side="top">
+          </PopoverTrigger>
+          <PopoverContent align="start" side="top">
             <p className="mb-1 font-bold">Contact Us:</p>
 
             <p className="mb-2">
@@ -65,8 +65,8 @@ export default function Footer() {
               Telegram: @andrewnyco <br />
               Whatsapp: +65 88848001
             </p>
-          </HoverCardContent>
-        </HoverCard>
+          </PopoverContent>
+        </Popover>
       </div>
     </div>
   );
