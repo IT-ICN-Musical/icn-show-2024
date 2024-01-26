@@ -45,7 +45,7 @@ export function StoreItem(props: StoreItemData) {
       <CardContent className="p-0"></CardContent>
       <CardFooter className="block w-full mb-2 pb-3">
         <div className="flex items-start justify-between pt-1">
-          <Label className="mb-2 mr-2">Quantity In Cart: {quantity}</Label>
+          <Label className="mb-2 mr-2">Quantity Ordered: {quantity}</Label>
           <ViewProductDialog {...props} />
         </div>
       </CardFooter>
