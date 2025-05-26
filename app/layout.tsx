@@ -27,8 +27,10 @@ export const metadata: Metadata = {
   keywords:
     "ICN, ICN Musical, Indonesia Cultural Night, NTU, ICN NTU, Indonesia Cultural Night NTU, NTU Indonesia",
   applicationName: "Show ICN Musical",
-  index: false,
-  follow: false,
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
